@@ -1,0 +1,73 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-MCHC.asl" - Fri May 16 10:45:03 2025
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "MCHC", 0x00000000)
+
+00000000:  53 53 44 54 66 00 00 00     "SSDTf..."
+00000008:  02 78 48 41 43 4B 00 00     ".xHACK.."
+00000010:  4D 43 48 43 00 00 00 00     "MCHC...."
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+00000024:  A0 0E 00 ...............    "..."
+00000027:  15 2E 5F 53 42 5F 50 43     ".._SB_PC"
+0000002F:  49 30 06 00 ............    "I0.."
+
+       2:  {
+       3:      External (_SB_.PCI0, DeviceObj)
+       5:      Scope (\_SB.PCI0)
+
+00000033:  10 32 5C 2E 5F 53 42 5F     ".2\._SB_"
+0000003B:  50 43 49 30 ............    "PCI0"
+
+       6:      {
+       7:          Device (MCHC)
+
+0000003F:  5B 82 25 4D 43 48 43 ...    "[.%MCHC"
+
+       8:          {
+       9:              Name (_ADR, Zero)  // _ADR: Address
+
+00000046:  08 5F 41 44 52 00 ......    "._ADR."
+
+      10:              Method (_STA, 0, NotSerialized)  // _STA: Status
+
+0000004C:  14 19 5F 53 54 41 00 ...    ".._STA."
+
+      11:              {
+      12:                  If (_OSI ("Darwin"))
+
+00000053:  A0 10 ..................    ".."
+00000055:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+0000005D:  77 69 6E 00 ............    "win."
+
+      13:                  {
+      14:                      Return (0x0F)
+
+00000061:  A4 0A 0F ...............    "..."
+
+      15:                  }
+      17:                  Return (Zero)
+
+00000064:  A4 00 ..................    ".."
+      18:              }
+      19:          }
+      20:      }
+      21:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-MCHC.asl - 23 lines, 452 bytes, 7 keywords
+AML Output:    SSDT-MCHC.aml - 102 bytes, 4 named objects, 3 executable opcodes
+Listing File:  SSDT-MCHC.lst - 1959 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
+

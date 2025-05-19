@@ -1,0 +1,97 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-ALS0.asl" - Fri May 16 10:44:25 2025
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "ALS0", 0x00000000)
+
+00000000:  53 53 44 54 83 00 00 00     "SSDT...."
+00000008:  02 3E 48 41 43 4B 00 00     ".>HACK.."
+00000010:  41 4C 53 30 00 00 00 00     "ALS0...."
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+
+       2:  {
+       3:      Scope (\_SB)
+
+00000024:  10 4E 05 5C 5F 53 42 5F     ".N.\_SB_"
+
+       4:      {
+       5:          Device (ALS0)
+
+0000002C:  5B 82 45 05 41 4C 53 30     "[.E.ALS0"
+
+       6:          {
+       7:              Name (_HID, "ACPI0008")  // _HID: Hardware ID
+
+00000034:  08 5F 48 49 44 0D 41 43     "._HID.AC"
+0000003C:  50 49 30 30 30 38 00 ...    "PI0008."
+
+       8:              Name (_CID, "smc-als")  // _CID: Compatible ID
+
+00000043:  08 5F 43 49 44 0D 73 6D     "._CID.sm"
+0000004B:  63 2D 61 6C 73 00 ......    "c-als."
+
+       9:              Name (_ALI, 0x012C)  // _ALI: Ambient Light Illuminance
+
+00000051:  08 5F 41 4C 49 0B 2C 01     "._ALI.,."
+
+      10:              Name (_ALR, Package (0x01)  // _ALR: Ambient Light Response
+
+[****iasl****]
+SSDT-ALS0.asl     10:             Name (_ALR, Package (0x01)  // _ALR: Ambient Light Response
+Optimize 1039 -                                          ^ Integer optimized to single-byte AML opcode (One)
+
+
+      11:              {
+      12:                  Package (0x02)
+      13:                  {
+      14:                      0x64, 
+      15:                      0x012C
+      16:                  }
+      17:              })
+
+00000059:  08 5F 41 4C 52 .........    "._ALR"
+0000005E:  12 0A 01 ...............    "..."
+00000061:  12 07 02 0A 64 0B 2C 01     "....d.,."
+
+      18:              Method (_STA, 0, NotSerialized)  // _STA: Status
+
+00000069:  14 19 5F 53 54 41 00 ...    ".._STA."
+
+      19:              {
+      20:                  If (_OSI ("Darwin"))
+
+00000070:  A0 10 ..................    ".."
+00000072:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+0000007A:  77 69 6E 00 ............    "win."
+
+      21:                  {
+      22:                      Return (0x0F)
+
+0000007E:  A4 0A 0F ...............    "..."
+
+      23:                  }
+      25:                  Return (Zero)
+
+00000081:  A4 00 ..................    ".."
+      26:              }
+      27:          }
+      28:      }
+      29:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-ALS0.asl - 31 lines, 769 bytes, 10 keywords
+AML Output:    SSDT-ALS0.aml - 131 bytes, 7 named objects, 3 executable opcodes
+Listing File:  SSDT-ALS0.lst - 2759 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 1 Optimizations
+

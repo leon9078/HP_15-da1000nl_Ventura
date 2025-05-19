@@ -1,0 +1,185 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "DMAR.asl" - Fri May 16 10:44:05 2025
+
+Input:  [000h 0000   4]                    Signature : "DMAR"    [DMA Remapping table]
+Parsed:                                    Signature : DMAR
+Output: [000h 0000   4] 44 4D 41 52                                      DMAR
+
+Input:  [004h 0004   4]                 Table Length : 00000068
+Parsed:                                 Table Length : 00000068
+Output: [004h 0004   4] 68 00 00 00                                      h...
+
+Input:  [008h 0008   1]                     Revision : 01
+Parsed:                                     Revision : 01
+Output: [008h 0008   1] 01                                               .
+
+Input:  [009h 0009   1]                     Checksum : 7D
+Parsed:                                     Checksum : 7D
+Output: [009h 0009   1] 7D                                               }
+
+Input:  [00Ah 0010   6]                       Oem ID : "HPQOEM"
+Parsed:                                       Oem ID : HPQOEM
+Output: [00Ah 0010   6] 48 50 51 4F 45 4D                                HPQOEM
+
+Input:  [010h 0016   8]                 Oem Table ID : "INSYDE  "
+Parsed:                                 Oem Table ID : INSYDE  
+Output: [010h 0016   8] 49 4E 53 59 44 45 20 20                          INSYDE  
+
+Input:  [018h 0024   4]                 Oem Revision : 00000002
+Parsed:                                 Oem Revision : 00000002
+Output: [018h 0024   4] 02 00 00 00                                      ....
+
+Input:  [01Ch 0028   4]              Asl Compiler ID : "INTL"
+Parsed:                              Asl Compiler ID : INTL
+Output: [01Ch 0028   4] 49 4E 54 4C                                      INTL
+
+Input:  [020h 0032   4]        Asl Compiler Revision : 20160422
+Parsed:                        Asl Compiler Revision : 20160422
+Output: [020h 0032   4] 22 04 16 20                                      ".. 
+
+Input:  [024h 0036   1]           Host Address Width : 26
+Parsed:                           Host Address Width : 26
+Output: [024h 0036   1] 26                                               &
+
+Input:  [025h 0037   1]                        Flags : 01
+Parsed:                                        Flags : 01
+Output: [025h 0037   1] 01                                               .
+
+Input:  [026h 0038  10]                     Reserved : 00 00 00 00 00 00 00 00 00 00
+Parsed:                                     Reserved : 00 00 00 00 00 00 00 00 00 00
+Output: [026h 0038  10] 00 00 00 00 00 00 00 00 00 00                    ..........
+
+Input:  [030h 0048   2]                Subtable Type : 0000 [Hardware Unit Definition]
+Parsed:                                Subtable Type : 0000
+Output: [030h 0048   2] 00 00                                            ..
+
+Input:  [032h 0050   2]                       Length : 0018
+Parsed:                                       Length : 0018
+Output: [032h 0050   2] 18 00                                            ..
+
+Input:  [034h 0052   1]                        Flags : 00
+Parsed:                                        Flags : 00
+Output: [034h 0052   1] 00                                               .
+
+Input:  [035h 0053   1]                     Reserved : 00
+Parsed:                                     Reserved : 00
+Output: [035h 0053   1] 00                                               .
+
+Input:  [036h 0054   2]           PCI Segment Number : 0000
+Parsed:                           PCI Segment Number : 0000
+Output: [036h 0054   2] 00 00                                            ..
+
+Input:  [038h 0056   8]        Register Base Address : 00000000FED90000
+Parsed:                        Register Base Address : 00000000FED90000
+Output: [038h 0056   8] 00 00 D9 FE 00 00 00 00                          ........
+
+Input:  [040h 0064   1]            Device Scope Type : 01 [PCI Endpoint Device]
+Parsed:                            Device Scope Type : 01
+Output: [040h 0064   1] 01                                               .
+
+Input:  [041h 0065   1]                 Entry Length : 08
+Parsed:                                 Entry Length : 08
+Output: [041h 0065   1] 08                                               .
+
+Input:  [042h 0066   2]                     Reserved : 0000
+Parsed:                                     Reserved : 0000
+Output: [042h 0066   2] 00 00                                            ..
+
+Input:  [044h 0068   1]               Enumeration ID : 00
+Parsed:                               Enumeration ID : 00
+Output: [044h 0068   1] 00                                               .
+
+Input:  [045h 0069   1]               PCI Bus Number : 00
+Parsed:                               PCI Bus Number : 00
+Output: [045h 0069   1] 00                                               .
+
+Input:  [046h 0070   2]                     PCI Path : 02,00
+Parsed:                                     PCI Path : 02,00
+Output: [046h 0070   2] 02 00                                            ..
+
+Input:  [048h 0072   2]                Subtable Type : 0000 [Hardware Unit Definition]
+Parsed:                                Subtable Type : 0000
+Output: [048h 0072   2] 00 00                                            ..
+
+Input:  [04Ah 0074   2]                       Length : 0020
+Parsed:                                       Length : 0020
+Output: [04Ah 0074   2] 20 00                                             .
+
+Input:  [04Ch 0076   1]                        Flags : 01
+Parsed:                                        Flags : 01
+Output: [04Ch 0076   1] 01                                               .
+
+Input:  [04Dh 0077   1]                     Reserved : 00
+Parsed:                                     Reserved : 00
+Output: [04Dh 0077   1] 00                                               .
+
+Input:  [04Eh 0078   2]           PCI Segment Number : 0000
+Parsed:                           PCI Segment Number : 0000
+Output: [04Eh 0078   2] 00 00                                            ..
+
+Input:  [050h 0080   8]        Register Base Address : 00000000FED91000
+Parsed:                        Register Base Address : 00000000FED91000
+Output: [050h 0080   8] 00 10 D9 FE 00 00 00 00                          ........
+
+Input:  [058h 0088   1]            Device Scope Type : 03 [IOAPIC Device]
+Parsed:                            Device Scope Type : 03
+Output: [058h 0088   1] 03                                               .
+
+Input:  [059h 0089   1]                 Entry Length : 08
+Parsed:                                 Entry Length : 08
+Output: [059h 0089   1] 08                                               .
+
+Input:  [05Ah 0090   2]                     Reserved : 0000
+Parsed:                                     Reserved : 0000
+Output: [05Ah 0090   2] 00 00                                            ..
+
+Input:  [05Ch 0092   1]               Enumeration ID : 02
+Parsed:                               Enumeration ID : 02
+Output: [05Ch 0092   1] 02                                               .
+
+Input:  [05Dh 0093   1]               PCI Bus Number : 00
+Parsed:                               PCI Bus Number : 00
+Output: [05Dh 0093   1] 00                                               .
+
+Input:  [05Eh 0094   2]                     PCI Path : 1E,07
+Parsed:                                     PCI Path : 1E,07
+Output: [05Eh 0094   2] 1E 07                                            ..
+
+Input:  [060h 0096   1]            Device Scope Type : 04 [Message-capable HPET Device]
+Parsed:                            Device Scope Type : 04
+Output: [060h 0096   1] 04                                               .
+
+Input:  [061h 0097   1]                 Entry Length : 08
+Parsed:                                 Entry Length : 08
+Output: [061h 0097   1] 08                                               .
+
+Input:  [062h 0098   2]                     Reserved : 0000
+Parsed:                                     Reserved : 0000
+Output: [062h 0098   2] 00 00                                            ..
+
+Input:  [064h 0100   1]               Enumeration ID : 00
+Parsed:                               Enumeration ID : 00
+Output: [064h 0100   1] 00                                               .
+
+Input:  [065h 0101   1]               PCI Bus Number : 00
+Parsed:                               PCI Bus Number : 00
+Output: [065h 0101   1] 00                                               .
+
+Input:  [066h 0102   2]                     PCI Path : 1E,06
+Parsed:                                     PCI Path : 1E,06
+Output: [066h 0102   2] 1E 06                                            ..
+
+
+Raw Table Data: Length 104 (0x68)
+
+  0000: 44 4D 41 52 68 00 00 00 01 7D 48 50 51 4F 45 4D  // DMARh....}HPQOEM
+  0010: 49 4E 53 59 44 45 20 20 02 00 00 00 49 4E 54 4C  // INSYDE  ....INTL
+  0020: 22 04 16 20 26 01 00 00 00 00 00 00 00 00 00 00  // ".. &...........
+  0030: 00 00 18 00 00 00 00 00 00 00 D9 FE 00 00 00 00  // ................
+  0040: 01 08 00 00 00 00 02 00 00 00 20 00 01 00 00 00  // .......... .....
+  0050: 00 10 D9 FE 00 00 00 00 03 08 00 00 02 00 1E 07  // ................
+  0060: 04 08 00 00 00 00 1E 06                          // ........

@@ -1,0 +1,74 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-THRM.asl" - Fri May 16 10:46:54 2025
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "THRM", 0x00000000)
+
+00000000:  53 53 44 54 6A 00 00 00     "SSDTj..."
+00000008:  02 0E 48 41 43 4B 00 00     "..HACK.."
+00000010:  54 48 52 4D 00 00 00 00     "THRM...."
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+00000024:  A0 0E 00 ...............    "..."
+00000027:  15 2E 5F 53 42 5F 50 43     ".._SB_PC"
+0000002F:  49 30 06 00 ............    "I0.."
+
+       2:  {
+       3:      External (_SB_.PCI0, DeviceObj)
+       5:      Scope (\_SB.PCI0)
+
+00000033:  10 36 5C 2E 5F 53 42 5F     ".6\._SB_"
+0000003B:  50 43 49 30 ............    "PCI0"
+
+       6:      {
+       7:          Device (THRM)
+
+0000003F:  5B 82 29 54 48 52 4D ...    "[.)THRM"
+
+       8:          {
+       9:              Name (_ADR, 0x00120000)  // _ADR: Address
+
+00000046:  08 5F 41 44 52 0C 00 00     "._ADR..."
+0000004E:  12 00 ..................    ".."
+
+      10:              Method (_STA, 0, NotSerialized)  // _STA: Status
+
+00000050:  14 19 5F 53 54 41 00 ...    ".._STA."
+
+      11:              {
+      12:                  If (_OSI ("Darwin"))
+
+00000057:  A0 10 ..................    ".."
+00000059:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+00000061:  77 69 6E 00 ............    "win."
+
+      13:                  {
+      14:                      Return (0x0F)
+
+00000065:  A4 0A 0F ...............    "..."
+
+      15:                  }
+      17:                  Return (Zero)
+
+00000068:  A4 00 ..................    ".."
+      18:              }
+      19:          }
+      20:      }
+      21:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-THRM.asl - 23 lines, 458 bytes, 7 keywords
+AML Output:    SSDT-THRM.aml - 106 bytes, 4 named objects, 3 executable opcodes
+Listing File:  SSDT-THRM.lst - 2011 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
+

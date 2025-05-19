@@ -1,0 +1,63 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-DHPET.asl" - Sun May 18 14:55:12 2025
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "DHPET", 0x00000000)
+
+00000000:  53 53 44 54 73 00 00 00     "SSDTs..."
+00000008:  02 2A 48 41 43 4B 00 00     ".*HACK.."
+00000010:  44 48 50 45 54 00 00 00     "DHPET..."
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+00000024:  A0 1E 00 ...............    "..."
+00000027:  15 2F 04 5F 53 42 5F 50     "./._SB_P"
+0000002F:  43 49 30 4C 50 43 42 48     "CI0LPCBH"
+00000037:  50 45 54 06 00 .........    "PET.."
+0000003C:  15 48 50 54 45 05 00 ...    ".HPTE.."
+
+       2:  {
+       3:      External (_SB_.PCI0.LPCB.HPET, DeviceObj)
+       4:      External (HPTE, FieldUnitObj)
+       6:      Scope (\_SB.PCI0.LPCB.HPET)
+
+00000043:  10 2F 5C 2F 04 5F 53 42     "./\/._SB"
+0000004B:  5F 50 43 49 30 4C 50 43     "_PCI0LPC"
+00000053:  42 48 50 45 54 .........    "BHPET"
+
+       7:      {
+       8:          Method (_INI, 0, NotSerialized)  // _INI: Initialize
+
+00000058:  14 1A 5F 49 4E 49 00 ...    ".._INI."
+
+       9:          {
+      10:              If (_OSI ("Darwin"))
+
+0000005F:  A0 13 ..................    ".."
+00000061:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+00000069:  77 69 6E 00 ............    "win."
+
+      11:              {
+      12:                  HPTE = Zero
+
+0000006D:  70 00 48 50 54 45 ......    "p.HPTE"
+      13:              }
+      14:          }
+      15:      }
+      16:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-DHPET.asl - 18 lines, 360 bytes, 4 keywords
+AML Output:    SSDT-DHPET.aml - 115 bytes, 2 named objects, 2 executable opcodes
+Listing File:  SSDT-DHPET.lst - 1834 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
+

@@ -1,0 +1,222 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-PRRE.asl" - Fri May 16 10:46:17 2025
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "PRRE", 0x00000000)
+
+00000000:  53 53 44 54 9C 01 00 00     "SSDT...."
+00000008:  02 83 48 41 43 4B 00 00     "..HACK.."
+00000010:  50 52 52 45 00 00 00 00     "PRRE...."
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+00000024:  A0 44 05 00 ............    ".D.."
+00000028:  15 2F 03 5F 53 42 5F 50     "./._SB_P"
+00000030:  43 49 30 50 52 52 45 06     "CI0PRRE."
+00000038:  00 .....................    "."
+00000039:  15 .....................    "."
+0000003A:  5C 2F 04 5F 53 42 5F 50     "\/._SB_P"
+00000042:  43 49 30 50 52 52 45 58     "CI0PRREX"
+0000004A:  43 52 53 08 00 .........    "CRS.."
+0000004F:  15 44 53 50 4D 05 00 ...    ".DSPM.."
+00000056:  15 50 43 48 4C 01 00 ...    ".PCHL.."
+0000005D:  15 50 43 48 53 05 00 ...    ".PCHS.."
+00000064:  15 50 4D 42 53 05 00 ...    ".PMBS.."
+0000006B:  15 50 53 54 50 05 00 ...    ".PSTP.."
+00000072:  15 53 42 52 47 05 00 ...    ".SBRG.."
+
+       2:  {
+       3:      External (_SB_.PCI0.PRRE, DeviceObj)
+       4:      External (_SB_.PCI0.PRRE.XCRS, MethodObj)
+       5:      External (DSPM, FieldUnitObj)
+       6:      External (PCHL, IntObj)
+       7:      External (PCHS, FieldUnitObj)
+       8:      External (PMBS, FieldUnitObj)
+       9:      External (PSTP, FieldUnitObj)
+      10:      External (SBRG, FieldUnitObj)
+      12:      Scope (\_SB.PCI0.PRRE)
+
+00000079:  10 42 12 5C 2F 03 5F 53     ".B.\/._S"
+00000081:  42 5F 50 43 49 30 50 52     "B_PCI0PR"
+00000089:  52 45 ..................    "RE"
+
+      13:      {
+      14:          Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+
+0000008B:  14 40 11 5F 43 52 53 08     ".@._CRS."
+
+      15:          {
+      16:              If (_OSI ("Darwin"))
+
+00000093:  A0 42 10 ...............    ".B."
+00000096:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+0000009E:  77 69 6E 00 ............    "win."
+
+      17:              {
+      18:                  Name (BUF0, ResourceTemplate ()
+
+000000A2:  08 42 55 46 30 11 4A 04     ".BUF0.J."
+000000AA:  0A 46 ..................    ".F"
+
+      19:                  {
+      20:                      Memory32Fixed (ReadWrite,
+      21:                          0xFD000000,         // Address Base
+      22:                          0x006A0000,         // Address Length
+      23:                          )
+
+000000AC:  86 09 00 01 00 00 00 FD     "........"
+000000B4:  00 00 6A 00 ............    "..j."
+
+      24:                      Memory32Fixed (ReadWrite,
+      25:                          0x00000000,         // Address Base
+      26:                          0x00000000,         // Address Length
+      27:                          _Y01)
+
+000000B8:  86 09 00 01 00 00 00 00     "........"
+000000C0:  00 00 00 00 ............    "...."
+
+      28:                      Memory32Fixed (ReadWrite,
+      29:                          0xFD6F0000,         // Address Base
+      30:                          0x00910000,         // Address Length
+      31:                          )
+
+000000C4:  86 09 00 01 00 00 6F FD     "......o."
+000000CC:  00 00 91 00 ............    "...."
+
+      32:                      Memory32Fixed (ReadWrite,
+      33:                          0xFE200000,         // Address Base
+      34:                          0x00600000,         // Address Length
+      35:                          )
+
+000000D0:  86 09 00 01 00 00 20 FE     "...... ."
+000000D8:  00 00 60 00 ............    "..`."
+
+      36:                      Memory32Fixed (ReadOnly,
+      37:                          0xFF000000,         // Address Base
+      38:                          0x01000000,         // Address Length
+      39:                          )
+
+000000DC:  86 09 00 00 00 00 00 FF     "........"
+000000E4:  00 00 00 01 ............    "...."
+
+      40:                      IO (Decode16,
+      41:                          0x0000,             // Range Minimum
+      42:                          0x0000,             // Range Maximum
+      43:                          0x01,               // Alignment
+      44:                          0xFF,               // Length
+      45:                          _Y00)
+
+000000E8:  47 01 00 00 00 00 01 FF     "G......."
+000000F0:  79 00 ..................    "y."
+
+      46:                  })
+      47:                  CreateWordField (BUF0, \_SB.PCI0.PRRE._CRS._Y00._MIN, AMIN)  // _MIN: Minimum Base Address
+
+000000F2:  8B 42 55 46 30 0A 3E 41     ".BUF0.>A"
+000000FA:  4D 49 4E ...............    "MIN"
+
+      48:                  CreateWordField (BUF0, \_SB.PCI0.PRRE._CRS._Y00._MAX, AMAX)  // _MAX: Maximum Base Address
+
+000000FD:  8B 42 55 46 30 0A 40 41     ".BUF0.@A"
+00000105:  4D 41 58 ...............    "MAX"
+
+      49:                  AMIN = PMBS
+
+00000108:  70 50 4D 42 53 41 4D 49     "pPMBSAMI"
+00000110:  4E .....................    "N"
+
+      50:                  AMAX = PMBS
+
+00000111:  70 50 4D 42 53 41 4D 41     "pPMBSAMA"
+00000119:  58 .....................    "X"
+
+      51:                  CreateDWordField (BUF0, \_SB.PCI0.PRRE._CRS._Y01._BAS, GBAS)  // _BAS: Base Address
+
+0000011A:  8A 42 55 46 30 0A 10 47     ".BUF0..G"
+00000122:  42 41 53 ...............    "BAS"
+
+      52:                  CreateDWordField (BUF0, \_SB.PCI0.PRRE._CRS._Y01._LEN, GLEN)  // _LEN: Length
+
+00000125:  8A 42 55 46 30 0A 14 47     ".BUF0..G"
+0000012D:  4C 45 4E ...............    "LEN"
+
+      53:                  GBAS = (SBRG + 0x006B0000)
+
+00000130:  72 53 42 52 47 0C 00 00     "rSBRG..."
+00000138:  6B 00 47 42 41 53 ......    "k.GBAS"
+
+      54:                  GLEN = 0x00020000
+
+0000013E:  70 0C 00 00 02 00 47 4C     "p.....GL"
+00000146:  45 4E ..................    "EN"
+
+      55:                  Name (BUF1, ResourceTemplate ()
+
+00000148:  08 42 55 46 31 11 11 0A     ".BUF1..."
+00000150:  0E .....................    "."
+
+      56:                  {
+      57:                      Memory32Fixed (ReadWrite,
+      58:                          0x00000000,         // Address Base
+      59:                          0x00400000,         // Address Length
+      60:                          _Y02)
+
+00000151:  86 09 00 01 00 00 00 00     "........"
+00000159:  00 00 40 00 ............    "..@."
+0000015D:  79 00 ..................    "y."
+
+      61:                  })
+      62:                  CreateDWordField (BUF1, \_SB.PCI0.PRRE._CRS._Y02._BAS, HDBA)  // _BAS: Base Address
+
+0000015F:  8A 42 55 46 31 0A 04 48     ".BUF1..H"
+00000167:  44 42 41 ...............    "DBA"
+
+      63:                  HDBA = DSPM
+
+0000016A:  70 44 53 50 4D 48 44 42     "pDSPMHDB"
+00000172:  41 .....................    "A"
+
+      64:                  If ((PCHS == PCHL) && (PSTP < 0x10))
+
+00000173:  A0 1D ..................    ".."
+00000175:  90 .....................    "."
+00000176:  93 50 43 48 53 50 43 48     ".PCHSPCH"
+0000017E:  4C .....................    "L"
+0000017F:  95 50 53 54 50 0A 10 ...    ".PSTP.."
+
+      65:                  {
+      66:                      Return (ConcatenateResTemplate (BUF0, BUF1))
+
+00000186:  A4 .....................    "."
+00000187:  84 42 55 46 30 42 55 46     ".BUF0BUF"
+0000018F:  31 00 ..................    "1."
+
+      67:                  }
+      69:                  Return (BUF0)
+
+00000191:  A4 42 55 46 30 .........    ".BUF0"
+
+      70:              }
+      72:              Return (^XCRS ())
+
+00000196:  A4 .....................    "."
+00000197:  5E 58 43 52 53 .........    "^XCRS"
+      73:          }
+      74:      }
+      75:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-PRRE.asl - 77 lines, 3066 bytes, 24 keywords
+AML Output:    SSDT-PRRE.aml - 412 bytes, 9 named objects, 15 executable opcodes
+Listing File:  SSDT-PRRE.lst - 7942 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
+

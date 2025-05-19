@@ -1,0 +1,89 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-PLUG.asl" - Fri May 16 10:45:32 2025
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "PLUG", 0x00000000)
+
+00000000:  53 53 44 54 76 00 00 00     "SSDTv..."
+00000008:  02 63 48 41 43 4B 00 00     ".cHACK.."
+00000010:  50 4C 55 47 00 00 00 00     "PLUG...."
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+00000024:  A0 0E 00 ...............    "..."
+00000027:  15 2E 5F 53 42 5F 50 52     ".._SB_PR"
+0000002F:  30 30 06 00 ............    "00.."
+
+       2:  {
+       3:      External (_SB_.PR00, DeviceObj)
+       5:      Scope (\_SB.PR00)
+
+00000033:  10 42 04 5C 2E 5F 53 42     ".B.\._SB"
+0000003B:  5F 50 52 30 30 .........    "_PR00"
+
+       6:      {
+       7:          Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+
+00000040:  14 35 5F 44 53 4D 04 ...    ".5_DSM."
+
+       8:          {
+       9:              If (_OSI ("Darwin"))
+
+00000047:  A0 29 ..................    ".)"
+00000049:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+00000051:  77 69 6E 00 ............    "win."
+
+      10:              {
+      11:                  If (Arg2 == Zero)
+
+00000055:  A0 09 ..................    ".."
+00000057:  93 6A 00 ...............    ".j."
+
+      12:                  {
+      13:                      Return (Buffer (One)
+
+0000005A:  A4 .....................    "."
+0000005B:  11 03 01 03 ............    "...."
+
+      14:                      {
+      15:                           0x03                                           
+      16:                      })
+      17:                  }
+      19:                  Return (Package (0x02)
+
+0000005F:  A4 .....................    "."
+00000060:  12 10 02 0D 70 6C 75 67     "....plug"
+00000068:  69 6E 2D 74 79 70 65 00     "in-type."
+00000070:  01 .....................    "."
+
+      20:                  {
+      21:                      "plugin-type", 
+      22:                      One
+      23:                  })
+      24:              }
+      26:              Return (Buffer (One)
+
+00000071:  A4 .....................    "."
+00000072:  11 03 01 00 ............    "...."
+      27:              {
+      28:                   0x00                                           
+      29:              })
+      30:          }
+      31:      }
+      32:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-PLUG.asl - 34 lines, 783 bytes, 8 keywords
+AML Output:    SSDT-PLUG.aml - 118 bytes, 2 named objects, 6 executable opcodes
+Listing File:  SSDT-PLUG.lst - 2667 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
+
