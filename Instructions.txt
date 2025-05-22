@@ -1,12 +1,111 @@
+Prerequirements:
+- macOS environment
+- empty 16+ GB USB flash drive for macOS Ventura
+- empty 2+ GB USB flash drive for Arch
+
 In a macOS environment:
+- Download official Python package from python.org and install the ".pkg". Quit and reopen Terminal.
 - Download macOS Ventura full installer using "installinstallmacos.py" (https://github.com/munki/macadmin-scripts)
-- Create a bootable macOS USB installer: https://support.apple.com/en-us/101578
+% cd ~/Documents/
+% git clone --depth 1 https://github.com/munki/macadmin-scripts
+% cd macadmin-scripts
+% sudo python3 installinstallmacos.py
+[type the number of the macOS version you want to install]
+% sudo chown -R $(whoami) *
+% sudo hdiutil attach -mountpoint mnt Install_macOS_13.7.6-22H625.dmg
+% cp -R mnt/Install\ macOS\ Ventura.app /Applications/
+% hdiutil detach mnt
 
-Boot a Linux environment such as Arch, make sure you have "git" installed.
-Copy "EFI_USB" to the root of the ESP of the bootable macOS Ventura USB installer, and rename it "EFI"
+Insert an empty 16+ GB USB flash drive
+% diskutil list
+% diskutil partitionDisk /dev/diskX GPT HFS+J "MyVolume" 0
+% sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+Y
+% diskutil eject /dev/diskX
 
-Insert USB drive, boot the PC, press F9 and select the USB, press Spacebar, select "UefiVarTool", after reboot, unplug USB flash drive, and shutdown with Power button.
+Download Arch from official Arch website
+Insert an empty 2+ GB USB flash drive
+% diskutil list
+% diskutil partitionDisk /dev/diskX MBR FAT32 "ARCH_202505" 0
+% bsdtar -x -f archlinux-2025.05.01-x86_64.iso -C /Volumes/ARCH_202505
+% sudo sync
+% diskutil eject /dev/diskX
 
-Insert again the USB drive, boot again, press F9 and select the USB, press Spacebar, select "UEFI Shell"
+Boot the Arch installer with this options (type "e" at initial boot screen):
+module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 quiet loglevel=0
 
-Shell> gdisk BLK3
+# setfont ter-i16b
+# pacman -Sy
+# pacman -S --noconfirm git
+# git clone https://github.com/leon9078/HP_15-da1000nl_Ventura
+
+Connect the macOS Ventura USB installer
+# lsblk
+# mount /dev/sdX1 /mnt
+# cp -R HP_15-da1000nl_Ventura/EFI_USB /mnt/EFI
+# sync
+# umount /mnt
+# eject /dev/sdX
+# systemctl poweroff
+
+Insert macOS Ventura USB installer, boot the PC, press F9 and select the USB, at OpenCore Boot Menu press Spacebar, select "UefiVarTool". This tool will set the BIOS settings recommended for hackintosh, then it reboots.
+After reboot, quickly unplug USB flash drive, wait for No bootable disk found message and shutdown by pressing Power button.
+
+Insert Arch USB installer, boot, F9, USB, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 quiet loglevel=0"
+
+# setfont ter-i16b
+# lsblk
+# gdisk /dev/sdX
+: n
+: [Enter]
+: [Enter]
+: +200M
+: EF00
+: c
+: EFI System Partition
+: n
+: [Enter]
+: [Enter]
+: -262151
+: AF00
+: c
+: 2
+: [Enter]
+: w
+: Y
+# sync
+# systemctl poweroff
+
+Insert macOS Ventura USB installer, boot, F9, USB, "Install macOS Ventura (external)" will be automatically selected and booted in 5 seconds.
+Type Cmd+Shift+T to quickly enter Terminal
+
+# diskutil list disk0
+# newfs_msdos -F 32 -v "EFI" /dev/rdisk0s1
+# diskutil mount readOnly disk0s1
+# mount | grep disk0 (check for "read-only")
+# diskutil umount disk0s1
+# newfs_hfs -J -v "Macintosh HD" /dev/rdisk0s2
+# diskutil mount disk0s2
+
+Cmd+Q to quit Terminal
+
+Install macOS Ventura to Macintosh HD.
+
+There will be multiple reboots in the middle.
+Reboot -> "macOS Installer" -> Reboot -> "macOS Installer" -> Reboot -> "Macintosh HD"
+When you see "Macintosh HD" inside OpenCore Boot Menu, press Tab once to select Shut Down
+
+Unplug macOS USB installer, plug Arch installer. Boot, F9, USB, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 quiet loglevel=0"
+
+# setfont ter-i16b
+# pacman -Sy
+# pacman -S --noconfirm git
+# git clone https://github.com/leon9078/HP_15-da1000nl_Ventura
+# lsblk
+# mount /dev/nvme0n1p1 /mnt
+# cp -R HP_15-da1000nl_Ventura/EFI_Target/* /mnt/EFI/
+# sync
+# umount /mnt
+# systemctl poweroff
+
+Unplug Arch USB, power on the PC, finish macOS install. Done!
