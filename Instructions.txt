@@ -1,0 +1,12 @@
+In a macOS environment:
+- Download macOS Ventura full installer using "installinstallmacos.py" (https://github.com/munki/macadmin-scripts)
+- Create a bootable macOS USB installer: https://support.apple.com/en-us/101578
+
+Boot a Linux environment such as Arch, make sure you have "git" installed.
+Copy "EFI_USB" to the root of the ESP of the bootable macOS Ventura USB installer, and rename it "EFI"
+
+Insert USB drive, boot the PC, press F9 and select the USB, press Spacebar, select "UefiVarTool", after reboot, unplug USB flash drive, and shutdown with Power button.
+
+Insert again the USB drive, boot again, press F9 and select the USB, press Spacebar, select "UEFI Shell"
+
+Shell> gdisk BLK3
