@@ -14,6 +14,7 @@ In a macOS environment:
 % sudo chown -R $(whoami) *
 % sudo hdiutil attach -mountpoint mnt Install_macOS_13.7.6-22H625.dmg
 % cp -R mnt/Install\ macOS\ Ventura.app /Applications/
+% sudo sync
 % hdiutil detach mnt
 
 Insert an empty 16+ GB USB flash drive
@@ -55,24 +56,7 @@ Insert Arch USB installer, boot, F9, USB, "e", "module_blacklist=b43,b43legacy,b
 
 # setfont ter-i16b
 # lsblk
-# gdisk /dev/sdX
-: n
-: [Enter]
-: [Enter]
-: +200M
-: EF00
-: c
-: EFI System Partition
-: n
-: [Enter]
-: [Enter]
-: -262151
-: AF00
-: c
-: 2
-: [Enter]
-: w
-: Y
+# parted -s /dev/sdX -- mklabel gpt mkpart \'EFI\ System\ Partition\' fat32 1MiB 201MiB set 1 esp on mkpart \'\' hfs+ 201MiB -262185s
 # sync
 # systemctl poweroff
 
