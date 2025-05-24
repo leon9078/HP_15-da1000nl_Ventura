@@ -105,7 +105,16 @@ Post-install
 % sed -i '' 's/\(^PS1=\).*/\1"%~ %# "/' ~/.zshrc
 % printf '\n# Make sure line content is cleared from cursor position till the beginning of line when Ctrl+U is typed\nbindkey "^U" backward-kill-line\n' >> ~/.zshrc
 
-Go to Terminal > Settings... > Profiles and select the profile you're using. Go to the 'Shell' tab and under the 'Startup' heading, check 'Run command:' and enter into the box: login -fpql my_username /bin/zsh -l
+Go to Terminal > Settings... > Profiles and select the profile you're using.
+
+Go to the 'Window' tab:
+- under 'Working directory or document', check 'Path'
+- under 'Active process name', uncheck 'Arguments'
+- check 'Profile name'
+
+Go to the 'Tab' tab and under 'Active process name', uncheck 'Arguments'.
+
+Go to the 'Shell' tab and under the 'Startup' heading, check 'Run command:' and enter into the box: login -fpql my_username /bin/zsh -l
 Make sure 'Run inside shell' is unchecked.
 If you have the 'Ask before closing: Only if there are processes other than the login shell and:' option selected, add 'login' and 'zsh' to the list of processes it will not prompt for.
 
