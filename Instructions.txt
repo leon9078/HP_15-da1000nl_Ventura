@@ -20,15 +20,15 @@ In a macOS environment:
 Insert an empty 16+ GB USB flash drive
 % diskutil list
 % diskutil partitionDisk /dev/diskX GPT HFS+J "MyVolume" 0
-% sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+% sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --nointeraction
 Y
 % diskutil eject /dev/diskX
 
 Download Arch from official Arch website
 Insert an empty 2+ GB USB flash drive
 % diskutil list
-% diskutil partitionDisk /dev/diskX MBR FAT32 "ARCH_202505" 0
-% bsdtar -x -f archlinux-2025.05.01-x86_64.iso -C /Volumes/ARCH_202505
+% diskutil partitionDisk /dev/diskX MBR FAT32 "ARCH_202506" 0
+% bsdtar -x --exclude=boot/syslinux/ -f archlinux-2025.06.01-x86_64.iso -C /Volumes/ARCH_202506
 % sudo sync
 % diskutil eject /dev/diskX
 
@@ -38,7 +38,7 @@ module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomo
 # setfont ter-i16b
 # pacman -Sy
 # pacman -S --noconfirm git
-# git clone https://github.com/leon9078/HP_15-da1000nl_Ventura
+# git clone --depth 1 https://github.com/leon9078/HP_15-da1000nl_Ventura
 
 Connect the macOS Ventura USB installer
 # lsblk
@@ -71,7 +71,7 @@ Type Cmd+Shift+T to quickly enter Terminal
 # newfs_hfs -J -v "Macintosh HD" /dev/rdisk0s2
 # diskutil mount disk0s2
 
-Cmd+Q to quit Terminal
+Cmd-Q to quit Terminal
 
 Install macOS Ventura to Macintosh HD.
 
@@ -84,9 +84,10 @@ Unplug macOS USB installer, plug Arch installer. Boot, F9, USB, "e", "module_bla
 # setfont ter-i16b
 # pacman -Sy
 # pacman -S --noconfirm git
-# git clone https://github.com/leon9078/HP_15-da1000nl_Ventura
+# git clone --depth 1 https://github.com/leon9078/HP_15-da1000nl_Ventura
 # lsblk
 # mount /dev/nvme0n1p1 /mnt
+# mkdir -p /mnt/EFI
 # cp -R HP_15-da1000nl_Ventura/EFI_Target/* /mnt/EFI/
 # sync
 # umount /mnt

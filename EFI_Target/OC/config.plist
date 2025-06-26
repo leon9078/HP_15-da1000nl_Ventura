@@ -284,9 +284,9 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>SERFRg==</data>
+				<data>AABFRg==</data>
 				<key>ReplaceMask</key>
-				<data></data>
+				<data>AAD//w==</data>
 				<key>Skip</key>
 				<integer>0</integer>
 				<key>TableLength</key>
@@ -314,9 +314,9 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>SERFRg==</data>
+				<data>AABFRg==</data>
 				<key>ReplaceMask</key>
-				<data></data>
+				<data>AAD//w==</data>
 				<key>Skip</key>
 				<integer>0</integer>
 				<key>TableLength</key>
@@ -344,9 +344,9 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>U0FUQQ==</data>
+				<data>AAAAQQ==</data>
 				<key>ReplaceMask</key>
-				<data></data>
+				<data>AAAA/w==</data>
 				<key>Skip</key>
 				<integer>0</integer>
 				<key>TableLength</key>
@@ -374,9 +374,9 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>U0FUQQ==</data>
+				<data>AAAAQQ==</data>
 				<key>ReplaceMask</key>
-				<data></data>
+				<data>AAAA/w==</data>
 				<key>Skip</key>
 				<integer>0</integer>
 				<key>TableLength</key>
@@ -404,9 +404,9 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>SU1FSQ==</data>
+				<data>SU1FAA==</data>
 				<key>ReplaceMask</key>
-				<data></data>
+				<data>////AA==</data>
 				<key>Skip</key>
 				<integer>0</integer>
 				<key>TableLength</key>
