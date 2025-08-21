@@ -177,6 +177,20 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
+				<string>Delete HPET</string>
+				<key>Enabled</key>
+				<true/>
+				<key>OemTableId</key>
+				<data>SU5TWURFICA=</data>
+				<key>TableLength</key>
+				<integer>56</integer>
+				<key>TableSignature</key>
+				<data>SFBFVA==</data>
+			</dict>
+			<dict>
+				<key>All</key>
+				<false/>
+				<key>Comment</key>
 				<string>Delete IHIS</string>
 				<key>Enabled</key>
 				<true/>
@@ -1229,17 +1243,13 @@
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>AAClPg==</data>
+				<data>AACbPg==</data>
 				<key>backlight-smoother-lowerbound</key>
 				<data>sAQAAA==</data>
 				<key>backlight-smoother-threshold</key>
 				<data>LAEAAA==</data>
 				<key>backlight-smoother-upperbound</key>
 				<data>wNQBAA==</data>
-				<key>complete-modeset</key>
-				<data>AQAAAA==</data>
-				<key>complete-modeset-framebuffers</key>
-				<data>AAAAAAAAAAE=</data>
 				<key>device-id</key>
 				<data>pT4AAA==</data>
 				<key>disable-agdc</key>
@@ -1299,7 +1309,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BrcmFirmwareData</string>
 				<key>MaxKernel</key>
-				<string>24.9.9</string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>14.0.0</string>
 				<key>PlistPath</key>
@@ -1317,7 +1327,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BrcmPatchRAM3</string>
 				<key>MaxKernel</key>
-				<string>24.9.9</string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>19.0.0</string>
 				<key>PlistPath</key>
@@ -1533,7 +1543,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/Lilu</string>
 				<key>MaxKernel</key>
-				<string></string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>8.0.0</string>
 				<key>PlistPath</key>
@@ -1551,7 +1561,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VirtualSMC</string>
 				<key>MaxKernel</key>
-				<string></string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>8.0.0</string>
 				<key>PlistPath</key>
@@ -1569,7 +1579,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SMCBatteryManager</string>
 				<key>MaxKernel</key>
-				<string></string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>8.0.0</string>
 				<key>PlistPath</key>
@@ -1587,7 +1597,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/WhateverGreen</string>
 				<key>MaxKernel</key>
-				<string></string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>10.0.0</string>
 				<key>PlistPath</key>
@@ -1605,7 +1615,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/AppleALC</string>
 				<key>MaxKernel</key>
-				<string></string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>8.0.0</string>
 				<key>PlistPath</key>
@@ -1641,7 +1651,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/ECEnabler</string>
 				<key>MaxKernel</key>
-				<string>24.9.9</string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>11.0.0</string>
 				<key>PlistPath</key>
@@ -1659,7 +1669,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/NVMeFix</string>
 				<key>MaxKernel</key>
-				<string>24.9.9</string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>18.0.0</string>
 				<key>PlistPath</key>
@@ -1695,7 +1705,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/RestrictEvents</string>
 				<key>MaxKernel</key>
-				<string>24.9.9</string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>12.0.0</string>
 				<key>PlistPath</key>
@@ -1713,7 +1723,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BlueToolFixup</string>
 				<key>MaxKernel</key>
-				<string>24.9.9</string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>21.0.0</string>
 				<key>PlistPath</key>
@@ -1749,7 +1759,7 @@
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MaxKernel</key>
-				<string>24.9.9</string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>17.0.0</string>
 				<key>PlistPath</key>
@@ -1767,7 +1777,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/AirportBrcmFixup</string>
 				<key>MaxKernel</key>
-				<string>24.9.9</string>
+				<string>25.9.9</string>
 				<key>MinKernel</key>
 				<string>12.0.0</string>
 				<key>PlistPath</key>
@@ -2068,7 +2078,7 @@
 			</dict>
 			<dict>
 				<key>Arguments</key>
-				<string>-noversion -nomap bios_settings.nsh</string>
+				<string>-noversion -nomap BIOS_settings.nsh</string>
 				<key>Auxiliary</key>
 				<true/>
 				<key>Comment</key>

@@ -6,41 +6,65 @@ Prerequirements:
 In a macOS environment:
 - Download official Python package from python.org and install the ".pkg". Quit and reopen Terminal.
 - Download macOS Ventura full installer using "installinstallmacos.py" (https://github.com/munki/macadmin-scripts)
-% cd ~/Documents/
-% git clone --depth 1 https://github.com/munki/macadmin-scripts
+
+% cd ~/Music/
+% git clone --depth 1 https://github.com/munki/macadmin-scripts.git
 % cd macadmin-scripts
 % sudo python3 installinstallmacos.py
 [type the number of the macOS version you want to install]
 % sudo chown -R $(whoami) *
-% sudo hdiutil attach -mountpoint mnt Install_macOS_13.7.6-22H625.dmg
+% hdiutil attach -mountpoint mnt Install_macOS_13.7.7-22H722.dmg
 % cp -R mnt/Install\ macOS\ Ventura.app /Applications/
 % sudo sync
 % hdiutil detach mnt
+% mv Install_macOS_13.7.7-22H722.dmg ../
+% cd ..
+% rm -rf macadmin-scripts
 
 Insert an empty 16+ GB USB flash drive
 % diskutil list
-% diskutil partitionDisk /dev/diskX GPT HFS+J "MyVolume" 0
-% sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --nointeraction
-Y
+% diskutil partitionDisk /dev/diskX GPT HFS+J 'Ventura_Installer' 0
+% sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/Ventura_Installer --nointeraction
 % diskutil eject /dev/diskX
+% hdiutil detach /dev/diskY
+(Y in this case is X+1)
 
-Download Arch from official Arch website
+Download Arch installer iso from official Arch website
 Insert an empty 2+ GB USB flash drive
 % diskutil list
-% diskutil partitionDisk /dev/diskX MBR FAT32 "ARCH_202506" 0
-% bsdtar -x --exclude=boot/syslinux/ -f archlinux-2025.06.01-x86_64.iso -C /Volumes/ARCH_202506
+% diskutil partitionDisk /dev/diskX MBR FAT32 'ARCH_202508' 0
+% bsdtar -x -v -o --exclude shellx64.efi --exclude boot/syslinux/ -f archlinux-2025.08.01-x86_64.iso -C /Volumes/ARCH_202508
+% perl -i -pe 's/(^timeout )15/${1}5/;s/(^beep o)n/$1ff/' /Volumes/ARCH_202508/loader/loader.conf
+% mv /Volumes/ARCH_202508/EFI/BOOT/{,ARCH-}BOOTx64.EFI
+% curl -LJ -o /Volumes/ARCH_202508/EFI/BOOT/BOOTx64.EFI https://github.com/leon9078/UEFI-Shell/releases/download/25H1/shellx64.efi
+% curl -LJ -o /Volumes/ARCH_202508/EFI/BOOT/BIOS_settings.nsh https://github.com/leon9078/HP_15-da1000nl_Ventura/raw/master/BIOS/BIOS_settings.nsh
+% curl -LJ -o /Volumes/ARCH_202508/EFI/TOOLS/uvt.efi --create-dirs https://github.com/leon9078/UefiVarTool/releases/download/1.0.0/uvt.efi
+% printf '@echo -off\r\nARCH-BOOTx64.EFI\r\n' | perl -0777pe 's/(.{1})/$1\x00/gs;s/^/\xFF\xFE/' > /Volumes/ARCH_202508/EFI/BOOT/startup.nsh
 % sudo sync
 % diskutil eject /dev/diskX
 
-Boot the Arch installer with this options (type "e" at initial boot screen):
-module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 quiet loglevel=0
+Before booting the Arch USB installer, make sure Ethernet cable or Android USB Tethering is disconnected!
 
+Boot the Arch USB installer.
+First, it will launch UEFI Shell, in 5 seconds it will automatically launch system-boot which, then, loads Arch Linux install menu.
+If we press any key, except ESC, we skip the delay and boot immediately to systemd-boot.
+
+Now, type "e" at initial boot screen: "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
+
+# systemctl stop reflector systemd-{networkd-wait-online,timesyncd}
+# systemctl disable reflector systemd-{networkd-wait-online,timesyncd}
 # setfont ter-i16b
+
+Connect Ethernet cable now, or Android USB Tethering
+
+# pacman-key --init
+# pacman-key --populate archlinux
 # pacman -Sy
 # pacman -S --noconfirm git
-# git clone --depth 1 https://github.com/leon9078/HP_15-da1000nl_Ventura
+# git clone --depth 1 https://github.com/leon9078/HP_15-da1000nl_Ventura.git
 
 Connect the macOS Ventura USB installer
+
 # lsblk
 # mount /dev/sdX1 /mnt
 # cp -R HP_15-da1000nl_Ventura/EFI_USB /mnt/EFI
@@ -49,26 +73,49 @@ Connect the macOS Ventura USB installer
 # eject /dev/sdX
 # systemctl poweroff
 
-Insert macOS Ventura USB installer, boot the PC, press F9 and select the USB, at OpenCore Boot Menu press Spacebar, select "UefiVarTool". This tool will set the BIOS settings recommended for hackintosh, then it reboots.
-After reboot, quickly unplug USB flash drive, wait for No bootable disk found message and shutdown by pressing Power button.
+Insert Arch USB installer.
+Power on the laptop, at UEFI Shell press ESC key (within 5 seconds) to skip "startup.nsh" (which will otherwise load Arch systemd-boot).
+At UEFI Shell prompt, we can simply type "bios_settings". UEFI Shell is case-insensitive, so we can type "bios_settings" instead of "BIOS_settings".
+Also we can omit typing the script extension ".nsh"
 
-Insert Arch USB installer, boot, F9, USB, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 quiet loglevel=0"
+Shell> bios_settings
 
+After reboot, quickly unplug USB flash drive, wait for "Boot device not found" message. Plug again the Arch USB flash drive and reboot.
+Again, at UEFI Shell press ESC key (within 5 seconds).
+
+Go to this website on another device: https://time.is/UTC
+
+Shell> date <month>/<day>/<year>
+Shell> time <hours>:<minutes>:<seconds>
+Shell> reset -s
+
+Unplug Arch USB installer, attach empty NVMe SSD
+
+Boot the PC, "Boot device not found", insert Arch USB installer.
+
+Make sure Ethernet cable or Android USB Tethering is disconnected!
+
+Ctrl-Alt-Del, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
+
+# systemctl stop reflector systemd-{networkd-wait-online,timesyncd}
+# systemctl disable reflector systemd-{networkd-wait-online,timesyncd}
 # setfont ter-i16b
 # lsblk
-# parted -s /dev/sdX -- mklabel gpt mkpart \'EFI\ System\ Partition\' fat32 1MiB 201MiB set 1 esp on mkpart \'\' hfs+ 201MiB -262185s
+# parted -s /dev/nvme0n1 -- mklabel gpt mkpart \'EFI\ System\ Partition\' fat32 1MiB 201MiB set 1 esp on mkpart \'\' hfs+ 201MiB -262185s
 # sync
 # systemctl poweroff
 
-Insert macOS Ventura USB installer, boot, F9, USB, "Install macOS Ventura (external)" will be automatically selected and booted in 5 seconds.
+Unplug Arch USB installer
+
+Insert macOS Ventura USB installer, boot the PC, press F9 and select the USB, "Install macOS Ventura (external)" will be automatically selected and booted in 5 seconds.
 Type Cmd+Shift+T to quickly enter Terminal
 
-# diskutil list disk0
-# newfs_msdos -F 32 -v "EFI" /dev/rdisk0s1
-# diskutil mount readOnly disk0s1
-# mount | grep disk0 (check for "read-only")
-# diskutil umount disk0s1
-# newfs_hfs -J -v "Macintosh HD" /dev/rdisk0s2
+# diskutil list /dev/disk0
+# newfs_msdos -F 32 -v 'EFI' /dev/rdisk0s1
+# diskutil mount readOnly /dev/disk0s1
+# mount | grep '/dev/disk0s1' (check for "read-only")
+# diskutil umount /dev/disk0s1
+# newfs_hfs -J -v 'Macintosh HD' /dev/rdisk0s2
 # diskutil mount disk0s2
 
 Cmd-Q to quit Terminal
@@ -79,14 +126,25 @@ There will be multiple reboots in the middle.
 Reboot -> "macOS Installer" -> Reboot -> "macOS Installer" -> Reboot -> "Macintosh HD"
 When you see "Macintosh HD" inside OpenCore Boot Menu, press Tab once to select Shut Down
 
-Unplug macOS USB installer, plug Arch installer. Boot, F9, USB, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 quiet loglevel=0"
+Unplug macOS USB installer, plug Arch installer.
 
+Make sure Ethernet is disconnected!
+
+Boot, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
+
+# systemctl stop reflector systemd-{networkd-wait-online,timesyncd}
+# systemctl disable reflector systemd-{networkd-wait-online,timesyncd}
 # setfont ter-i16b
+
+Connect Ethernet cable now
+
+# pacman-key --init
+# pacman-key --populate archlinux
 # pacman -Sy
 # pacman -S --noconfirm git
-# git clone --depth 1 https://github.com/leon9078/HP_15-da1000nl_Ventura
+# git clone --depth 1 https://github.com/leon9078/HP_15-da1000nl_Ventura.git
 # lsblk
-# mount /dev/nvme0n1p1 /mnt
+# mount /dev/sdX1 /mnt
 # mkdir -p /mnt/EFI
 # cp -R HP_15-da1000nl_Ventura/EFI_Target/* /mnt/EFI/
 # sync
@@ -103,7 +161,7 @@ Post-install
 - Open Terminal
 % cp /etc/zshrc ~/.zshrc
 % chmod 600 ~/.zshrc
-% sed -i '' 's/\(^PS1=\).*/\1"%~ %# "/' ~/.zshrc
+% perl -i -pe 's/(^PS1=).*/$1"%~ %# "/' ~/.zshrc
 % printf '\n# Make sure line content is cleared from cursor position till the beginning of line when Ctrl+U is typed\nbindkey "^U" backward-kill-line\n' >> ~/.zshrc
 
 Go to Terminal > Settings... > Profiles and select the profile you're using.
