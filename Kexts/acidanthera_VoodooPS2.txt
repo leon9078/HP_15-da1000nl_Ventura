@@ -1,0 +1,3 @@
+Remove PNP0F13 from VoodooPS2Controller
+
+% perl -i -ne 'print unless m/PNP0F13/' EFI_*/OC/Kexts/VoodooPS2Controller.kext/Contents/Info.plist
