@@ -262,7 +262,9 @@ y
 
 # partprobe /dev/sdX
 # efibootmgr -O
-# for i in $(seq 9 -1 0); do efibootmgr -Bb $i 2> /dev/null; done
+# for i in $(seq 9002 -1000 0); do efibootmgr -Bb $i 2> /dev/null; done
+# for i in $(seq 9001 -1000 0); do efibootmgr -Bb $i 2> /dev/null; done
+# for i in $(seq 9000 -1000 0); do efibootmgr -Bb $i 2> /dev/null; done
 # systemctl poweroff
 
 Unplug Arch USB, power on the PC, finish macOS install. Done!
