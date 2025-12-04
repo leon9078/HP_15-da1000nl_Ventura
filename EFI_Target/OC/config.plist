@@ -2130,6 +2130,8 @@
 				<data>AA==</data>
 				<key>bluetoothInternalControllerInfo</key>
 				<data>AAAAAAAAAAAAAAAAAAA=</data>
+				<key>boot-args</key>
+				<string>ps2rst=2</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
