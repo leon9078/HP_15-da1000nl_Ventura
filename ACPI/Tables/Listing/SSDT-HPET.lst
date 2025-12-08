@@ -1,0 +1,108 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-HPET.asl" - Mon Dec  8 09:35:48 2025
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "HPET", 0x00000000)
+
+00000000:  53 53 44 54 AF 00 00 00     "SSDT...."
+00000008:  02 62 48 41 43 4B 00 00     ".bHACK.."
+00000010:  48 50 45 54 00 00 00 00     "HPET...."
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+00000024:  A0 31 00 ...............    ".1."
+00000027:  15 2F 04 5F 53 42 5F 50     "./._SB_P"
+0000002F:  43 49 30 4C 50 43 42 48     "CI0LPCBH"
+00000037:  50 45 54 06 00 .........    "PET.."
+0000003C:  15 .....................    "."
+0000003D:  5C 2F 05 5F 53 42 5F 50     "\/._SB_P"
+00000045:  43 49 30 4C 50 43 42 48     "CI0LPCBH"
+0000004D:  50 45 54 58 43 52 53 08     "PETXCRS."
+00000055:  00 .....................    "."
+
+       2:  {
+       3:      External (_SB_.PCI0.LPCB.HPET, DeviceObj)
+       4:      External (_SB_.PCI0.LPCB.HPET.XCRS, MethodObj)
+       6:      Scope (\_SB.PCI0.LPCB.HPET)
+
+00000056:  10 48 05 5C 2F 04 5F 53     ".H.\/._S"
+0000005E:  42 5F 50 43 49 30 4C 50     "B_PCI0LP"
+00000066:  43 42 48 50 45 54 ......    "CBHPET"
+
+       7:      {
+       8:          Name (BUF1, ResourceTemplate ()
+
+0000006C:  08 42 55 46 31 11 1D 0A     ".BUF1..."
+00000074:  1A .....................    "."
+
+       9:          {
+      10:              IRQNoFlags ()
+      11:                  {0}
+
+00000075:  22 01 00 ...............    "".."
+
+      12:              IRQNoFlags ()
+      13:                  {8}
+
+00000078:  22 00 01 ...............    "".."
+
+      14:              IRQNoFlags ()
+      15:                  {11}
+
+0000007B:  22 00 08 ...............    "".."
+
+      16:              IRQNoFlags ()
+      17:                  {12}
+
+0000007E:  22 00 10 ...............    "".."
+
+      18:              Memory32Fixed (ReadWrite,
+      19:                  0xFED00000,         // Address Base
+      20:                  0x00000400,         // Address Length
+      21:                  )
+
+00000081:  86 09 00 01 00 00 D0 FE     "........"
+00000089:  00 04 00 00 ............    "...."
+0000008D:  79 00 ..................    "y."
+
+      22:          })
+      23:          Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+
+0000008F:  14 1F 5F 43 52 53 08 ...    ".._CRS."
+
+      24:          {
+      25:              If (_OSI ("Darwin"))
+
+00000096:  A0 12 ..................    ".."
+00000098:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+000000A0:  77 69 6E 00 ............    "win."
+
+      26:              {
+      27:                  Return (BUF1)
+
+000000A4:  A4 42 55 46 31 .........    ".BUF1"
+
+      28:              }
+      30:              Return (^XCRS ())
+
+000000A9:  A4 .....................    "."
+000000AA:  5E 58 43 52 53 .........    "^XCRS"
+      31:          }
+      32:      }
+      33:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-HPET.asl - 35 lines, 830 bytes, 6 keywords
+AML Output:    SSDT-HPET.aml - 175 bytes, 3 named objects, 3 executable opcodes
+Listing File:  SSDT-HPET.lst - 3180 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
+

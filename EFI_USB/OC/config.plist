@@ -28,7 +28,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-DHPET.aml</string>
+				<string>SSDT-EC.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -36,7 +36,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-EC.aml</string>
+				<string>SSDT-HPET.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -172,20 +172,6 @@
 				<integer>168</integer>
 				<key>TableSignature</key>
 				<data>RE1BUg==</data>
-			</dict>
-			<dict>
-				<key>All</key>
-				<false/>
-				<key>Comment</key>
-				<string>Delete HPET</string>
-				<key>Enabled</key>
-				<true/>
-				<key>OemTableId</key>
-				<data>SU5TWURFICA=</data>
-				<key>TableLength</key>
-				<integer>56</integer>
-				<key>TableSignature</key>
-				<data>SFBFVA==</data>
 			</dict>
 			<dict>
 				<key>All</key>
@@ -914,7 +900,7 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Remove a specific memory range from PRRE in DSDT, only for macOS</string>
+				<string>Delete a specific memory range from PRRE in DSDT, only for macOS</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
@@ -1147,6 +1133,126 @@
 				<integer>14551</integer>
 				<key>TableSignature</key>
 				<data>U1NEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string>_SB_.PCI0.LPCB.HPET._CRS</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Add IRQNoFlags 0,8,11,12 to HPET in DSDT, only for macOS</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X0NSUw==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>WAAAAA==</data>
+				<key>ReplaceMask</key>
+				<data>/wAAAA==</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string></string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Delete IRQNoFlags 2 from IPIC in DSDT</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>IgQAeQA=</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>AAAAAAA=</data>
+				<key>ReplaceMask</key>
+				<data>AP8AAAA=</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string></string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Delete IRQNoFlags 8 from RTC in DSDT</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>IgABeQA=</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>AAAAAAA=</data>
+				<key>ReplaceMask</key>
+				<data>AAD/AAA=</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string></string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Delete IRQNoFlags 0 from TIMR in DSDT</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>IgEAeQA=</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>AAAAAAA=</data>
+				<key>ReplaceMask</key>
+				<data>AP8AAAA=</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
 			</dict>
 		</array>
 		<key>Quirks</key>
