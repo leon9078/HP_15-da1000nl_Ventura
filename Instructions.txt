@@ -120,7 +120,7 @@ First, it will launch UEFI Shell, in 5 seconds it will automatically launch syst
 If we press any key, except ESC, we skip the delay and boot immediately to systemd-boot.
 
 Now, type "e" at initial boot screen:
-module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0
+module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset nouveau.modeset=0 pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0
 
 # systemctl stop reflector systemd-{networkd-wait-online,timesyncd}
 # systemctl disable reflector systemd-{networkd-wait-online,timesyncd}
@@ -168,7 +168,7 @@ Boot the PC, "Boot device not found", insert Arch USB installer.
 
 Make sure Ethernet cable or Android USB Tethering is disconnected!
 
-Ctrl-Alt-Del, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
+Ctrl-Alt-Del, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset nouveau.modeset=0 pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
 
 # systemctl stop reflector systemd-{networkd-wait-online,timesyncd}
 # systemctl disable reflector systemd-{networkd-wait-online,timesyncd}
@@ -235,7 +235,7 @@ Unplug macOS USB installer, plug Arch installer.
 
 Make sure Ethernet is disconnected!
 
-Boot, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset i915.modeset=0 nouveau.modeset=0 pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
+Boot, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb nomodeset nouveau.modeset=0 pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
 
 # systemctl stop reflector systemd-{networkd-wait-online,timesyncd}
 # systemctl disable reflector systemd-{networkd-wait-online,timesyncd}
