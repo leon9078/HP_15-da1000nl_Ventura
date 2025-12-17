@@ -65,6 +65,7 @@
 				<string>PNP0F03</string>
 				<string>PNP0F0B</string>
 				<string>PNP0F0E</string>
+				<string>PNP0F13</string>
 			</array>
 		</dict>
 		<key>ApplePS2Controller</key>

@@ -1,3 +1,4 @@
-Remove PNP0F13 from VoodooPS2Controller
+Add "RemapPrntScr" to VoodooPS2Keyboard configuration in order to enable/disable specific functions when pressing PrntScr (F13) key
+Ref: (https://github.com/acidanthera/VoodooPS2/blob/2.3.7/Docs/ACPI/SSDT-PrtSc-Remap.dsl#L2-L7)
 
-% perl -i -ne 'print unless m/PNP0F13/' EFI_*/OC/Kexts/VoodooPS2Controller.kext/Contents/Info.plist
+% perl -i -pe 'print "\t\t\t\t\t<key>RemapPrntScr</key>\n\t\t\t\t\t<true/>\n" if $. == 306; close ARGV if eof' EFI_*/OC/Kexts/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents/Info.plist

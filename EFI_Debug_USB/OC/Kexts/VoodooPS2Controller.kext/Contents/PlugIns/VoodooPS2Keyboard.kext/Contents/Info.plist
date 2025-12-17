@@ -303,6 +303,8 @@
 					<false/>
 					<key>SleepPressTime</key>
 					<integer>0</integer>
+					<key>RemapPrntScr</key>
+					<true/>
 					<key>Swap capslock and left control</key>
 					<false/>
 					<key>Swap command and option</key>
