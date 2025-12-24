@@ -1,0 +1,106 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-NVOP_PS3.asl" - Wed Dec 24 15:38:50 2025
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "NVOP_PS3", 0x00000000)
+
+00000000:  53 53 44 54 04 01 00 00     "SSDT...."
+00000008:  02 E4 48 41 43 4B 00 00     "..HACK.."
+00000010:  4E 56 4F 50 5F 50 53 33     "NVOP_PS3"
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+00000024:  A0 46 06 00 ............    ".F.."
+00000028:  15 2F 04 5F 53 42 5F 50     "./._SB_P"
+00000030:  43 49 30 52 50 30 35 50     "CI0RP05P"
+00000038:  58 53 58 06 00 .........    "XSX.."
+0000003D:  15 .....................    "."
+0000003E:  5C 2F 05 5F 53 42 5F 50     "\/._SB_P"
+00000046:  43 49 30 52 50 30 35 50     "CI0RP05P"
+0000004E:  58 53 58 5F 44 53 4D 08     "XSX_DSM."
+00000056:  04 .....................    "."
+00000057:  15 .....................    "."
+00000058:  5C 2F 05 5F 53 42 5F 50     "\/._SB_P"
+00000060:  43 49 30 52 50 30 35 50     "CI0RP05P"
+00000068:  58 53 58 5F 50 53 33 08     "XSX_PS3."
+00000070:  00 .....................    "."
+00000071:  15 .....................    "."
+00000072:  5C 2F 05 5F 53 42 5F 50     "\/._SB_P"
+0000007A:  43 49 30 52 50 30 35 50     "CI0RP05P"
+00000082:  58 53 58 58 49 4E 49 08     "XSXXINI."
+0000008A:  00 .....................    "."
+
+       2:  {
+       3:      External (_SB_.PCI0.RP05.PXSX, DeviceObj)
+       4:      External (_SB_.PCI0.RP05.PXSX._DSM, MethodObj)
+       5:      External (_SB_.PCI0.RP05.PXSX._PS3, MethodObj)
+       6:      External (_SB_.PCI0.RP05.PXSX.XINI, MethodObj)
+       8:      Scope (\_SB.PCI0.RP05.PXSX)
+
+0000008B:  10 48 07 5C 2F 04 5F 53     ".H.\/._S"
+00000093:  42 5F 50 43 49 30 52 50     "B_PCI0RP"
+0000009B:  30 35 50 58 53 58 ......    "05PXSX"
+
+       9:      {
+      10:          Method (_INI, 0, NotSerialized)  // _INI: Initialize
+
+000000A1:  14 42 06 5F 49 4E 49 00     ".B._INI."
+
+      11:          {
+      12:              If (CondRefOf (^XINI))
+
+000000A9:  A0 0E ..................    ".."
+000000AB:  5B 12 5E 58 49 4E 49 00     "[.^XINI."
+
+      13:              {
+      14:                  ^XINI ()
+
+000000B3:  5E 58 49 4E 49 .........    "^XINI"
+
+      15:              }
+      17:              If ((_OSI ("Darwin") && CondRefOf (^_DSM)) && CondRefOf (^_PS3))
+
+000000B8:  A0 4B 04 ...............    ".K."
+000000BB:  90 .....................    "."
+000000BC:  90 .....................    "."
+000000BD:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+000000C5:  77 69 6E 00 ............    "win."
+000000C9:  5B 12 5E 5F 44 53 4D 00     "[.^_DSM."
+000000D1:  5B 12 5E 5F 50 53 33 00     "[.^_PS3."
+
+      18:              {
+      19:                  ^_DSM (ToUUID ("a486d8f8-0bda-471b-a72b-6042a6b5bee0"), 0x0100, 0x1A, Buffer (0x04)
+
+000000D9:  5E 5F 44 53 4D .........    "^_DSM"
+000000DE:  11 13 0A 10 F8 D8 86 A4     "........"
+000000E6:  DA 0B 1B 47 A7 2B 60 42     "...G.+`B"
+000000EE:  A6 B5 BE E0 0B 00 01 0A     "........"
+000000F6:  1A .....................    "."
+000000F7:  11 07 0A 04 01 00 00 03     "........"
+
+      20:                      {
+      21:                           0x01, 0x00, 0x00, 0x03
+      22:                      })
+      23:                  ^_PS3 ()
+
+000000FF:  5E 5F 50 53 33 .........    "^_PS3"
+      24:              }
+      25:          }
+      26:      }
+      27:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-NVOP_PS3.asl - 29 lines, 805 bytes, 9 keywords
+AML Output:    SSDT-NVOP_PS3.aml - 260 bytes, 2 named objects, 7 executable opcodes
+Listing File:  SSDT-NVOP_PS3.lst - 3682 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
+

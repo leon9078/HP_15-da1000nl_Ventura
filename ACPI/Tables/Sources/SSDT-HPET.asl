@@ -1,10 +1,11 @@
 DefinitionBlock ("", "SSDT", 2, "HACK", "HPET", 0x00000000)
 {
     External (_SB_.PCI0.LPCB.HPET, DeviceObj)
+    External (_SB_.PCI0.LPCB.HPET.XCRS, MethodObj)
 
     Scope (\_SB.PCI0.LPCB.HPET)
     {
-        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+        Name (BUF1, ResourceTemplate ()
         {
             IRQNoFlags ()
                 {0}
@@ -19,5 +20,14 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "HPET", 0x00000000)
                 0x00000400,         // Address Length
                 )
         })
+        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+        {
+            If (_OSI ("Darwin"))
+            {
+                Return (BUF1)
+            }
+
+            Return (^XCRS ())
+        }
     }
 }

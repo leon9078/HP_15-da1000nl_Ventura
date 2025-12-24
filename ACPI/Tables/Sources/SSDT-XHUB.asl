@@ -20,35 +20,35 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
     {
         Name (UHSD, Package (0x0C)
         {
-            One, 
-            One, 
-            One, 
-            Zero, 
-            One, 
-            One, 
-            Zero, 
-            Zero, 
-            Zero, 
-            Zero, 
-            Zero, 
+            One,
+            One,
+            One,
+            Zero,
+            One,
+            One,
+            Zero,
+            Zero,
+            Zero,
+            Zero,
+            Zero,
             One
         })
         Name (USSD, Package (0x06)
         {
-            One, 
-            One, 
-            Zero, 
-            Zero, 
-            Zero, 
+            One,
+            One,
+            Zero,
+            Zero,
+            Zero,
             Zero
         })
         Method (GUPC, 2, Serialized)
         {
             Name (PCKG, Package (0x04)
             {
-                Zero, 
-                Zero, 
-                Zero, 
+                Zero,
+                Zero,
+                Zero,
                 Zero
             })
             PCKG [Zero] = Arg0
@@ -80,6 +80,21 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
     Scope (\_SB.PCI0.XHC)
     {
+        OperationRegion (ZPRT, PCI_Config, 0x74, 0x02)
+        Field (ZPRT, AnyAcc, NoLock, Preserve)
+        {
+            Offset (0x01),
+            PMEE,   1
+        }
+
+        Method (_PSW, 1, NotSerialized)  // _PSW: Power State Wake
+        {
+            If (_OSI ("Darwin"))
+            {
+                PMEE = Zero
+            }
+        }
+
         Device (XHUB)
         {
             Name (_ADR, Zero)  // _ADR: Address
@@ -347,3 +362,4 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
         }
     }
 }
+
