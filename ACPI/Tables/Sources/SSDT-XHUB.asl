@@ -362,4 +362,3 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
         }
     }
 }
-

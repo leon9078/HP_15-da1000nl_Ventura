@@ -3,7 +3,7 @@ Intel ACPI Component Architecture
 ASL+ Optimizing Compiler version 20160422-64(RM)
 Copyright (c) 2000 - 2016 Intel Corporation
 
-Compilation of "SSDT-XHUB.asl" - Wed Dec 24 15:07:56 2025
+Compilation of "SSDT-XHUB.asl" - Wed Dec 24 17:56:33 2025
 
        1:  DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
@@ -977,7 +977,7 @@ Summary of errors and warnings
 
 ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
 
-ASL Input:     SSDT-XHUB.asl - 367 lines, 11081 bytes, 234 keywords
+ASL Input:     SSDT-XHUB.asl - 366 lines, 11080 bytes, 234 keywords
 AML Output:    SSDT-XHUB.aml - 1551 bytes, 94 named objects, 140 executable opcodes
 Listing File:  SSDT-XHUB.lst - 31350 bytes
 
