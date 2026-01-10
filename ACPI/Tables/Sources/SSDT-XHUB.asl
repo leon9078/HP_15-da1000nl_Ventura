@@ -58,7 +58,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
         Method (GPLD, 2, Serialized)
         {
-            Name (PCKG, Package (0x01)
+            Name (PCKG, Package (One)
             {
                 Buffer (0x10) {}
             })
@@ -80,21 +80,6 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
     Scope (\_SB.PCI0.XHC)
     {
-        OperationRegion (ZPRT, PCI_Config, 0x74, 0x02)
-        Field (ZPRT, AnyAcc, NoLock, Preserve)
-        {
-            Offset (0x01),
-            PMEE,   1
-        }
-
-        Method (_PSW, 1, NotSerialized)  // _PSW: Power State Wake
-        {
-            If (_OSI ("Darwin"))
-            {
-                PMEE = Zero
-            }
-        }
-
         Device (XHUB)
         {
             Name (_ADR, Zero)  // _ADR: Address
@@ -278,7 +263,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
             Device (SS01)
             {
-                Name (_ADR, 0x10)  // _ADR: Address
+                Name (_ADR, 0x0D)  // _ADR: Address
                 Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                 {
                     Return (GUPC (DerefOf (USSD [Zero]), 0x03))
@@ -292,7 +277,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
             Device (SS02)
             {
-                Name (_ADR, 0x11)  // _ADR: Address
+                Name (_ADR, 0x0E)  // _ADR: Address
                 Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                 {
                     Return (GUPC (DerefOf (USSD [One]), 0x03))
@@ -306,7 +291,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
             Device (SS03)
             {
-                Name (_ADR, 0x12)  // _ADR: Address
+                Name (_ADR, 0x0F)  // _ADR: Address
                 Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                 {
                     Return (GUPC (DerefOf (USSD [0x02]), 0x03))
@@ -320,7 +305,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
             Device (SS04)
             {
-                Name (_ADR, 0x13)  // _ADR: Address
+                Name (_ADR, 0x10)  // _ADR: Address
                 Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                 {
                     Return (GUPC (DerefOf (USSD [0x03]), 0x03))
@@ -334,7 +319,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
             Device (SS05)
             {
-                Name (_ADR, 0x14)  // _ADR: Address
+                Name (_ADR, 0x11)  // _ADR: Address
                 Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                 {
                     Return (GUPC (DerefOf (USSD [0x04]), 0x03))
@@ -348,7 +333,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XHUB", 0x00000000)
 
             Device (SS06)
             {
-                Name (_ADR, 0x15)  // _ADR: Address
+                Name (_ADR, 0x12)  // _ADR: Address
                 Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                 {
                     Return (GUPC (DerefOf (USSD [0x05]), 0x03))

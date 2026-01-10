@@ -26,51 +26,47 @@
     Vendor ID: 0x8086, Device ID: 0x9DE0, RevisionID: 0x30, ClassCode: 0x078000, SubsystemVendorID: 0x103C, SubsystemID: 0x8533
     DevicePath: PciRoot(0x0)/Pci(0x16,0x0)
 
-08. Bridge device - PCI-to-PCI bridge
-    Vendor ID: 0x8086, Device ID: 0x9DBC, RevisionID: 0xF0, ClassCode: 0x060400
-    DevicePath: PciRoot(0x0)/Pci(0x1C,0x0)
+08. Mass storage controller - Serial ATA controller using AHCI
+    Vendor ID: 0x8086, Device ID: 0x9DD3, RevisionID: 0x30, ClassCode: 0x010601, SubsystemVendorID: 0x103C, SubsystemID: 0x8533
+    DevicePath: PciRoot(0x0)/Pci(0x17,0x0)
 
-09. Display controller - 3D controller
-    Vendor ID: 0x10DE, Device ID: 0x174D, RevisionID: 0xA2, ClassCode: 0x030200, SubsystemVendorID: 0x103C, SubsystemID: 0x8533
-    DevicePath: PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)
-
-10. Bridge device - PCI-to-PCI bridge
+09. Bridge device - PCI-to-PCI bridge
     Vendor ID: 0x8086, Device ID: 0x9DB0, RevisionID: 0xF0, ClassCode: 0x060400
     DevicePath: PciRoot(0x0)/Pci(0x1D,0x0)
 
-11. Network controller - Ethernet controller
+10. Network controller - Ethernet controller
     Vendor ID: 0x10EC, Device ID: 0x8168, RevisionID: 0x15, ClassCode: 0x020000, SubsystemVendorID: 0x103C, SubsystemID: 0x8533
     DevicePath: PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)
 
-12. Bridge device - PCI-to-PCI bridge
+11. Bridge device - PCI-to-PCI bridge
     Vendor ID: 0x8086, Device ID: 0x9DB1, RevisionID: 0xF0, ClassCode: 0x060400
     DevicePath: PciRoot(0x0)/Pci(0x1D,0x1)
 
-13. Network controller - Other network controller
+12. Network controller - Other network controller
     Vendor ID: 0x14E4, Device ID: 0x43B1, RevisionID: 0x03, ClassCode: 0x028000, SubsystemVendorID: 0x17AA, SubsystemID: 0x0623
     DevicePath: PciRoot(0x0)/Pci(0x1D,0x1)/Pci(0x0,0x0)
 
-14. Bridge device - PCI-to-PCI bridge
+13. Bridge device - PCI-to-PCI bridge
     Vendor ID: 0x8086, Device ID: 0x9DB4, RevisionID: 0xF0, ClassCode: 0x060400
     DevicePath: PciRoot(0x0)/Pci(0x1D,0x4)
 
-15. Mass storage controller - NVM Express I/O controller
+14. Mass storage controller - NVM Express I/O controller
     Vendor ID: 0xC0A9, Device ID: 0x540A, RevisionID: 0x01, ClassCode: 0x010802, SubsystemVendorID: 0xC0A9, SubsystemID: 0x5021
     DevicePath: PciRoot(0x0)/Pci(0x1D,0x4)/Pci(0x0,0x0)
 
-16. Bridge device - ISA bridge
+15. Bridge device - ISA bridge
     Vendor ID: 0x8086, Device ID: 0x9D84, RevisionID: 0x30, ClassCode: 0x060100, SubsystemVendorID: 0x103C, SubsystemID: 0x8533
     DevicePath: PciRoot(0x0)/Pci(0x1F,0x0)
 
-17. Multimedia controller - High definition audio device
+16. Multimedia controller - High definition audio device
     Vendor ID: 0x8086, Device ID: 0x9DC8, RevisionID: 0x30, ClassCode: 0x040300, SubsystemVendorID: 0x103C, SubsystemID: 0x8533
     DevicePath: PciRoot(0x0)/Pci(0x1F,0x3)
 
-18. Serial bus controller - SMBus controller
+17. Serial bus controller - SMBus controller
     Vendor ID: 0x8086, Device ID: 0x9DA3, RevisionID: 0x30, ClassCode: 0x0C0500, SubsystemVendorID: 0x103C, SubsystemID: 0x8533
     DevicePath: PciRoot(0x0)/Pci(0x1F,0x4)
 
-19. Serial bus controller - Other serial bus controller
+18. Serial bus controller - Other serial bus controller
     Vendor ID: 0x8086, Device ID: 0x9DA4, RevisionID: 0x30, ClassCode: 0x0C8000, SubsystemVendorID: 0x103C, SubsystemID: 0x8533
     DevicePath: PciRoot(0x0)/Pci(0x1F,0x5)
 

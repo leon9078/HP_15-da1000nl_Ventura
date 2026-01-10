@@ -1,6 +1,6 @@
 DefinitionBlock ("", "SSDT", 2, "HACK", "PLUG", 0x00000000)
 {
-    External (_SB_.PR00, DeviceObj)
+    External (_SB_.PR00, ProcessorObj)
 
     Scope (\_SB.PR00)
     {
@@ -8,25 +8,22 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "PLUG", 0x00000000)
         {
             If (_OSI ("Darwin"))
             {
-                If (Arg2 == Zero)
+                If (!Arg2)
                 {
                     Return (Buffer (One)
                     {
-                         0x03                                           
+                         0x03
                     })
                 }
 
                 Return (Package (0x02)
                 {
-                    "plugin-type", 
+                    "plugin-type",
                     One
                 })
             }
 
-            Return (Buffer (One)
-            {
-                 0x00                                           
-            })
+            Return (Buffer (One) {})
         }
     }
 }

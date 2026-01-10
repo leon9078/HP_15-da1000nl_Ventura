@@ -1,0 +1,113 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-PSW.asl" - Fri Jan  9 21:29:03 2026
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "PSW", 0x00000000)
+
+00000000:  53 53 44 54 24 01 00 00     "SSDT$..."
+00000008:  02 7B 48 41 43 4B 00 00     ".{HACK.."
+00000010:  50 53 57 00 00 00 00 00     "PSW....."
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+00000024:  A0 44 07 00 ............    ".D.."
+00000028:  15 2F 05 5F 53 42 5F 50     "./._SB_P"
+00000030:  43 49 30 4C 50 43 42 45     "CI0LPCBE"
+00000038:  43 5F 5F 41 44 50 54 05     "C__ADPT."
+00000040:  00 .....................    "."
+00000041:  15 2F 05 5F 53 42 5F 50     "./._SB_P"
+00000049:  43 49 30 4C 50 43 42 45     "CI0LPCBE"
+00000051:  43 5F 5F 42 53 54 30 05     "C__BST0."
+00000059:  00 .....................    "."
+0000005A:  15 2F 05 5F 53 42 5F 50     "./._SB_P"
+00000062:  43 49 30 4C 50 43 42 45     "CI0LPCBE"
+0000006A:  43 5F 5F 55 57 41 4B 05     "C__UWAK."
+00000072:  00 .....................    "."
+00000073:  15 2F 03 5F 53 42 5F 50     "./._SB_P"
+0000007B:  43 49 30 58 48 43 5F 06     "CI0XHC_."
+00000083:  00 .....................    "."
+00000084:  15 2F 04 5F 53 42 5F 50     "./._SB_P"
+0000008C:  43 49 30 58 48 43 5F 58     "CI0XHC_X"
+00000094:  50 52 54 0A 00 .........    "PRT.."
+
+       2:  {
+       3:      External (_SB_.PCI0.LPCB.EC__.ADPT, FieldUnitObj)
+       4:      External (_SB_.PCI0.LPCB.EC__.BST0, FieldUnitObj)
+       5:      External (_SB_.PCI0.LPCB.EC__.UWAK, FieldUnitObj)
+       6:      External (_SB_.PCI0.XHC_, DeviceObj)
+       7:      External (_SB_.PCI0.XHC_.XPRT, OpRegionObj)
+       9:      Field (\_SB.PCI0.XHC.XPRT, AnyAcc, NoLock, Preserve)
+      10:      {
+      11:          Offset (0x75),
+      12:          PMEE,   1
+      13:      }
+
+00000099:  5B 81 1D 5C 2F 04 5F 53     "[..\/._S"
+000000A1:  42 5F 50 43 49 30 58 48     "B_PCI0XH"
+000000A9:  43 5F 58 50 52 54 00 00     "C_XPRT.."
+000000B1:  48 3A 50 4D 45 45 01 ...    "H:PMEE."
+
+      15:      Scope (\_SB.PCI0.XHC)
+
+000000B8:  10 4B 06 5C 2F 03 5F 53     ".K.\/._S"
+000000C0:  42 5F 50 43 49 30 58 48     "B_PCI0XH"
+000000C8:  43 5F ..................    "C_"
+
+      16:      {
+      17:          Method (_PSW, 1, NotSerialized)  // _PSW: Power State Wake
+
+000000CA:  14 49 05 5F 50 53 57 01     ".I._PSW."
+
+      18:          {
+      19:              If (_OSI ("Darwin"))
+
+000000D2:  A0 41 05 ...............    ".A."
+000000D5:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+000000DD:  77 69 6E 00 ............    "win."
+
+      20:              {
+      21:                  If ((^^LPCB.EC.ADPT != One) || (^^LPCB.EC.BST0 & One))
+
+000000E1:  A0 2E ..................    ".."
+000000E3:  91 92 93 5E 5E 2F 03 4C     "...^^/.L"
+000000EB:  50 43 42 45 43 5F 5F 41     "PCBEC__A"
+000000F3:  44 50 54 01 ............    "DPT."
+000000F7:  7B 5E 5E 2F 03 4C 50 43     "{^^/.LPC"
+000000FF:  42 45 43 5F 5F 42 53 54     "BEC__BST"
+00000107:  30 01 00 ...............    "0.."
+
+      22:                  {
+      23:                      PMEE = Zero
+
+0000010A:  70 00 50 4D 45 45 ......    "p.PMEE"
+
+      24:                  }
+      25:                  Else
+      26:                  {
+      27:                      ^^LPCB.EC.UWAK = Arg0
+
+00000110:  A1 13 ..................    ".."
+00000112:  70 68 5E 5E 2F 03 4C 50     "ph^^/.LP"
+0000011A:  43 42 45 43 5F 5F 55 57     "CBEC__UW"
+00000122:  41 4B ..................    "AK"
+      28:                  }
+      29:              }
+      30:          }
+      31:      }
+      32:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-PSW.asl - 34 lines, 850 bytes, 11 keywords
+AML Output:    SSDT-PSW.aml - 292 bytes, 3 named objects, 8 executable opcodes
+Listing File:  SSDT-PSW.lst - 3884 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
+

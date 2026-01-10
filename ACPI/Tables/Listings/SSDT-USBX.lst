@@ -3,12 +3,12 @@ Intel ACPI Component Architecture
 ASL+ Optimizing Compiler version 20160422-64(RM)
 Copyright (c) 2000 - 2016 Intel Corporation
 
-Compilation of "SSDT-USBX.asl" - Fri May 16 10:47:05 2025
+Compilation of "SSDT-USBX.asl" - Wed Jan  7 16:07:19 2026
 
        1:  DefinitionBlock ("", "SSDT", 2, "HACK", "USBX", 0x00000000)
 
-00000000:  53 53 44 54 D7 00 00 00     "SSDT...."
-00000008:  02 78 48 41 43 4B 00 00     ".xHACK.."
+00000000:  53 53 44 54 D6 00 00 00     "SSDT...."
+00000008:  02 7E 48 41 43 4B 00 00     ".~HACK.."
 00000010:  55 53 42 58 00 00 00 00     "USBX...."
 00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
 00000020:  22 04 16 20 ............    "".. "
@@ -16,87 +16,87 @@ Compilation of "SSDT-USBX.asl" - Fri May 16 10:47:05 2025
        2:  {
        3:      Scope (\_SB)
 
-00000024:  10 42 0B 5C 5F 53 42 5F     ".B.\_SB_"
+00000024:  10 41 0B 5C 5F 53 42 5F     ".A.\_SB_"
 
        4:      {
        5:          Device (USBX)
 
-0000002C:  5B 82 49 0A 55 53 42 58     "[.I.USBX"
+0000002C:  5B 82 48 0A 55 53 42 58     "[.H.USBX"
 
        6:          {
        7:              Name (_ADR, Zero)  // _ADR: Address
 
 00000034:  08 5F 41 44 52 00 ......    "._ADR."
 
-       8:              Method (_STA, 0, NotSerialized)  // _STA: Status
+       8:              Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 
-0000003A:  14 19 5F 53 54 41 00 ...    ".._STA."
+0000003A:  14 41 08 5F 44 53 4D 04     ".A._DSM."
 
        9:              {
-      10:                  If (_OSI ("Darwin"))
+      10:                  If (!Arg2)
 
-00000041:  A0 10 ..................    ".."
-00000043:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
-0000004B:  77 69 6E 00 ............    "win."
+00000042:  A0 08 ..................    ".."
+00000044:  92 6A ..................    ".j"
 
       11:                  {
-      12:                      Return (0x0F)
+      12:                      Return (Buffer (One)
 
-0000004F:  A4 0A 0F ...............    "..."
+00000046:  A4 .....................    "."
+00000047:  11 03 01 03 ............    "...."
 
-      13:                  }
-      15:                  Return (Zero)
+      13:                      {
+      14:                           0x03
+      15:                      })
+      16:                  }
+      18:                  Return (Package (0x08)
 
-00000052:  A4 00 ..................    ".."
+0000004B:  A4 .....................    "."
+0000004C:  12 4F 06 08 0D 6B 55 53     ".O...kUS"
+00000054:  42 53 6C 65 65 70 50 6F     "BSleepPo"
+0000005C:  77 65 72 53 75 70 70 6C     "werSuppl"
+00000064:  79 00 0B EC 13 0D 6B 55     "y.....kU"
+0000006C:  53 42 53 6C 65 65 70 50     "SBSleepP"
+00000074:  6F 72 74 43 75 72 72 65     "ortCurre"
+0000007C:  6E 74 4C 69 6D 69 74 00     "ntLimit."
+00000084:  0B 34 08 0D 6B 55 53 42     ".4..kUSB"
+0000008C:  57 61 6B 65 50 6F 77 65     "WakePowe"
+00000094:  72 53 75 70 70 6C 79 00     "rSupply."
+0000009C:  0B EC 13 0D 6B 55 53 42     "....kUSB"
+000000A4:  57 61 6B 65 50 6F 72 74     "WakePort"
+000000AC:  43 75 72 72 65 6E 74 4C     "CurrentL"
+000000B4:  69 6D 69 74 00 0B 34 08     "imit..4."
 
-      16:              }
-      18:              Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+      19:                  {
+      20:                      "kUSBSleepPowerSupply",
+      21:                      0x13EC,
+      22:                      "kUSBSleepPortCurrentLimit",
+      23:                      0x0834,
+      24:                      "kUSBWakePowerSupply",
+      25:                      0x13EC,
+      26:                      "kUSBWakePortCurrentLimit",
+      27:                      0x0834
+      28:                  })
+      29:              }
+      31:              Method (_STA, 0, NotSerialized)  // _STA: Status
 
-00000054:  14 42 08 5F 44 53 4D 04     ".B._DSM."
+000000BC:  14 19 5F 53 54 41 00 ...    ".._STA."
 
-      19:              {
-      20:                  If (Arg2 == Zero)
+      32:              {
+      33:                  If (_OSI ("Darwin"))
 
-0000005C:  A0 09 ..................    ".."
-0000005E:  93 6A 00 ...............    ".j."
+000000C3:  A0 10 ..................    ".."
+000000C5:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+000000CD:  77 69 6E 00 ............    "win."
 
-      21:                  {
-      22:                      Return (Buffer (One)
+      34:                  {
+      35:                      Return (0x0F)
 
-00000061:  A4 .....................    "."
-00000062:  11 03 01 03 ............    "...."
+000000D1:  A4 0A 0F ...............    "..."
 
-      23:                      {
-      24:                           0x03                                           
-      25:                      })
-      26:                  }
-      28:                  Return (Package (0x08)
+      36:                  }
+      38:                  Return (Zero)
 
-00000066:  A4 .....................    "."
-00000067:  12 4F 06 08 0D 6B 55 53     ".O...kUS"
-0000006F:  42 53 6C 65 65 70 50 6F     "BSleepPo"
-00000077:  77 65 72 53 75 70 70 6C     "werSuppl"
-0000007F:  79 00 0B EC 13 0D 6B 55     "y.....kU"
-00000087:  53 42 53 6C 65 65 70 50     "SBSleepP"
-0000008F:  6F 72 74 43 75 72 72 65     "ortCurre"
-00000097:  6E 74 4C 69 6D 69 74 00     "ntLimit."
-0000009F:  0B 34 08 0D 6B 55 53 42     ".4..kUSB"
-000000A7:  57 61 6B 65 50 6F 77 65     "WakePowe"
-000000AF:  72 53 75 70 70 6C 79 00     "rSupply."
-000000B7:  0B EC 13 0D 6B 55 53 42     "....kUSB"
-000000BF:  57 61 6B 65 50 6F 72 74     "WakePort"
-000000C7:  43 75 72 72 65 6E 74 4C     "CurrentL"
-000000CF:  69 6D 69 74 00 0B 34 08     "imit..4."
-      29:                  {
-      30:                      "kUSBSleepPowerSupply", 
-      31:                      0x13EC, 
-      32:                      "kUSBSleepPortCurrentLimit", 
-      33:                      0x0834, 
-      34:                      "kUSBWakePowerSupply", 
-      35:                      0x13EC, 
-      36:                      "kUSBWakePortCurrentLimit", 
-      37:                      0x0834
-      38:                  })
+000000D4:  A4 00 ..................    ".."
       39:              }
       40:          }
       41:      }
@@ -109,9 +109,9 @@ Summary of errors and warnings
 
 ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
 
-ASL Input:     SSDT-USBX.asl - 44 lines, 1124 bytes, 12 keywords
-AML Output:    SSDT-USBX.aml - 215 bytes, 5 named objects, 7 executable opcodes
-Listing File:  SSDT-USBX.lst - 3645 bytes
+ASL Input:     SSDT-USBX.asl - 44 lines, 1067 bytes, 12 keywords
+AML Output:    SSDT-USBX.aml - 214 bytes, 5 named objects, 7 executable opcodes
+Listing File:  SSDT-USBX.lst - 3587 bytes
 
 Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
 

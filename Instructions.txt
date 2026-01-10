@@ -245,6 +245,11 @@ Boot, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43lega
 d
 3
 x
+a
+1
+60
+63
+[Enter, exit]
 h
 v
 

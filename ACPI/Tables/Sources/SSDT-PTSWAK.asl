@@ -10,7 +10,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "PTSWAK", 0x00000000)
     {
         Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
         {
-            If ((_OSI ("Darwin") && CondRefOf (\_SB.PCI0.RP05.PXSX._PS0)))
+            If (_OSI ("Darwin") && CondRefOf (\_SB.PCI0.RP05.PXSX._PS0))
             {
                 \_SB.PCI0.RP05.PXSX._PS0 ()
             }

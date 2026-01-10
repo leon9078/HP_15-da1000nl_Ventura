@@ -84,6 +84,22 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
+				<string>SSDT-PRW.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-PSW.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
 				<string>SSDT-PTSWAK.aml</string>
 			</dict>
 			<dict>
@@ -1172,6 +1188,96 @@
 			</dict>
 			<dict>
 				<key>Base</key>
+				<string>_SB_.PCI0.XDCI._PRW</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Prevent XDCI from waking the system in DSDT, only for macOS</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X1BSVw==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>WAAAAA==</data>
+				<key>ReplaceMask</key>
+				<data>/wAAAA==</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string>_SB_.PCI0.RP05.PXSX._PRW</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Prevent RP05.PXSX from waking the system in DSDT, only for macOS</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X1BSVw==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>WAAAAA==</data>
+				<key>ReplaceMask</key>
+				<data>/wAAAA==</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string>_SB_.PCI0.CNVW._PRW</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Prevent CNVW from waking the system in DSDT, only for macOS</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X1BSVw==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>WAAAAA==</data>
+				<key>ReplaceMask</key>
+				<data>/wAAAA==</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
 				<string></string>
 				<key>BaseSkip</key>
 				<integer>0</integer>
@@ -1669,6 +1775,24 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>SMCLightSensor.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/SMCLightSensor</string>
+				<key>MaxKernel</key>
+				<string>25.9.9</string>
+				<key>MinKernel</key>
+				<string>8.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
 				<string>WhateverGreen.kext</string>
@@ -1849,6 +1973,42 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>CPUFriendDataProvider.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string>25.9.9</string>
+				<key>MinKernel</key>
+				<string>10.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>CPUFriend.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/CPUFriend</string>
+				<key>MaxKernel</key>
+				<string>25.9.9</string>
+				<key>MinKernel</key>
+				<string>10.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
 				<string>HibernationFixup.kext</string>
@@ -1993,6 +2153,36 @@
 				<data>AAEAAAA=</data>
 				<key>ReplaceMask</key>
 				<data>AA8AAAA=</data>
+				<key>Skip</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>Base</key>
+				<string>__ZN28AppleAHCIDiskPolledInterface7startIOEjjyy18IOPolledCompletion</string>
+				<key>Comment</key>
+				<string>Fix hibernation mode behaving like normal sleep on non-Apple SATA drives</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>6AAAAACEAHQA</data>
+				<key>Identifier</key>
+				<string>com.apple.iokit.IOAHCIBlockStorage</string>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data>/wAAAAD/AP8A</data>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>22.0.0</string>
+				<key>Replace</key>
+				<data>AAAAAAAAAJCQ</data>
+				<key>ReplaceMask</key>
+				<data>AAAAAAAAAP//</data>
 				<key>Skip</key>
 				<integer>0</integer>
 			</dict>
@@ -2213,13 +2403,19 @@
 			<dict>
 				<key>revblock</key>
 				<string>none</string>
+				<key>revcpu</key>
+				<integer>1</integer>
+				<key>revcpuname</key>
+				<string>Intel Core i7-8565U</string>
 				<key>revpatch</key>
-				<string>diskread</string>
+				<string>cpuname,diskread</string>
 				<key>rtc-blacklist</key>
 				<data>EBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi9OT2xtbo/u9w==</data>
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
+				<key>EnableTRIM</key>
+				<data>AQ==</data>
 				<key>ForceDisplayRotationInEFI</key>
 				<integer>0</integer>
 				<key>SystemAudioVolume</key>
@@ -2242,7 +2438,7 @@
 			<key>E09B9297-7928-4440-9AAB-D1F8536FBF0A</key>
 			<dict>
 				<key>hbfx-ahbm</key>
-				<integer>3977</integer>
+				<integer>3981</integer>
 				<key>hbfx-patch-pci</key>
 				<string>XSPI</string>
 			</dict>
@@ -2256,11 +2452,14 @@
 			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
 			<array>
 				<string>revblock</string>
+				<string>revcpu</string>
+				<string>revcpuname</string>
 				<string>revpatch</string>
 				<string>rtc-blacklist</string>
 			</array>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<array>
+				<string>EnableTRIM</string>
 				<string>ForceDisplayRotationInEFI</string>
 				<string>SystemAudioVolume</string>
 				<string>SystemAudioVolumeDB</string>
@@ -2327,7 +2526,7 @@
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>ProcessorType</key>
-			<integer>0</integer>
+			<integer>1537</integer>
 			<key>ROM</key>
 			<data>5OdJZ7rq</data>
 			<key>SpoofVendor</key>
