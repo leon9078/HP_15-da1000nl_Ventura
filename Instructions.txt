@@ -22,7 +22,7 @@ In a macOS environment:
 % hdiutil detach mnt
 % mv Install_macOS_13.7.8-22H730.dmg ..
 % cd ..
-% rm -r macadmin-scripts
+% rm -rf macadmin-scripts
 
 Download GPT fdisk (gdisk) tool
 
@@ -33,7 +33,7 @@ Download GPT fdisk (gdisk) tool
 
 Insert an empty 16+ GB USB flash drive
 
-% diskutil list
+% printf '\33c\e[3J' && diskutil list
 % sudo ./gdisk /dev/rdiskX
 n
 [Enter, accept default Partition number]
@@ -88,7 +88,7 @@ Download Arch Linux installer ISO from their official website
 
 Insert an empty 2+ GB USB flash drive
 
-% diskutil list
+% printf '\33c\e[3J' && diskutil list
 
 Get the size of the Arch .iso and add 100 MiB in order to create a partition where the file system will have enough free space
 
@@ -245,11 +245,6 @@ Boot, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43lega
 d
 3
 x
-a
-1
-60
-63
-[Enter, exit]
 h
 v
 
@@ -306,7 +301,7 @@ Now at this point it's better to open a new Terminal window and copy/paste the f
 
 Cmd+N
 
-# printf '\33c\e[3J' && curl -L https://github.com/leon9078/HP_15-da1000nl_Ventura/raw/refs/heads/master/Instructions.txt | tail -n 115
+# printf '\33c\e[3J' && curl -Ls https://github.com/leon9078/HP_15-da1000nl_Ventura/raw/refs/heads/master/Instructions.txt | tail -n 115
 
 Let's first handle "Pro" and "Novel" profiles, which already have "ShowWindowSettingsNameInTitle" set!
 

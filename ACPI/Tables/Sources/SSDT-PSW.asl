@@ -1,7 +1,6 @@
 DefinitionBlock ("", "SSDT", 2, "HACK", "PSW", 0x00000000)
 {
     External (_SB_.PCI0.LPCB.EC__.ADPT, FieldUnitObj)
-    External (_SB_.PCI0.LPCB.EC__.BST0, FieldUnitObj)
     External (_SB_.PCI0.LPCB.EC__.UWAK, FieldUnitObj)
     External (_SB_.PCI0.XHC_, DeviceObj)
     External (_SB_.PCI0.XHC_.XPRT, OpRegionObj)
@@ -18,7 +17,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "PSW", 0x00000000)
         {
             If (_OSI ("Darwin"))
             {
-                If ((^^LPCB.EC.ADPT != One) || (^^LPCB.EC.BST0 & One))
+                If (^^LPCB.EC.ADPT != One)
                 {
                     PMEE = Zero
                 }

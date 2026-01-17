@@ -3,12 +3,12 @@ Intel ACPI Component Architecture
 ASL+ Optimizing Compiler version 20160422-64(RM)
 Copyright (c) 2000 - 2016 Intel Corporation
 
-Compilation of "SSDT-XSPI.asl" - Wed Jan  7 16:04:02 2026
+Compilation of "SSDT-XSPI.asl" - Sat Jan 17 08:31:16 2026
 
        1:  DefinitionBlock ("", "SSDT", 2, "HACK", "XSPI", 0x00000000)
 
-00000000:  53 53 44 54 B2 00 00 00     "SSDT...."
-00000008:  02 8D 48 41 43 4B 00 00     "..HACK.."
+00000000:  53 53 44 54 B3 00 00 00     "SSDT...."
+00000008:  02 86 48 41 43 4B 00 00     "..HACK.."
 00000010:  58 53 50 49 00 00 00 00     "XSPI...."
 00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
 00000020:  22 04 16 20 ............    "".. "
@@ -20,13 +20,13 @@ Compilation of "SSDT-XSPI.asl" - Wed Jan  7 16:04:02 2026
        3:      External (_SB_.PCI0, DeviceObj)
        5:      Scope (\_SB.PCI0)
 
-00000033:  10 4E 07 5C 2E 5F 53 42     ".N.\._SB"
+00000033:  10 4F 07 5C 2E 5F 53 42     ".O.\._SB"
 0000003B:  5F 50 43 49 30 .........    "_PCI0"
 
        6:      {
        7:          Device (XSPI)
 
-00000040:  5B 82 40 07 58 53 50 49     "[.@.XSPI"
+00000040:  5B 82 41 07 58 53 50 49     "[.A.XSPI"
 
        8:          {
        9:              Name (_ADR, 0x001F0005)  // _ADR: Address
@@ -36,26 +36,26 @@ Compilation of "SSDT-XSPI.asl" - Wed Jan  7 16:04:02 2026
 
       10:              Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 
-00000052:  14 45 04 5F 44 53 4D 04     ".E._DSM."
+00000052:  14 46 04 5F 44 53 4D 04     ".F._DSM."
 
       11:              {
       12:                  If (_OSI ("Darwin"))
 
-0000005A:  A0 39 ..................    ".9"
+0000005A:  A0 3A ..................    ".:"
 0000005C:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
 00000064:  77 69 6E 00 ............    "win."
 
       13:                  {
-      14:                      If (!Arg2)
+      14:                      If (Arg2 == Zero)
 
-00000068:  A0 08 ..................    ".."
-0000006A:  92 6A ..................    ".j"
+00000068:  A0 09 ..................    ".."
+0000006A:  93 6A 00 ...............    ".j."
 
       15:                      {
       16:                          Return (Buffer (One)
 
-0000006C:  A4 .....................    "."
-0000006D:  11 03 01 03 ............    "...."
+0000006D:  A4 .....................    "."
+0000006E:  11 03 01 03 ............    "...."
 
       17:                          {
       18:                               0x03
@@ -63,17 +63,17 @@ Compilation of "SSDT-XSPI.asl" - Wed Jan  7 16:04:02 2026
       20:                      }
       22:                      Return (Package (0x02)
 
-00000071:  A4 .....................    "."
-00000072:  12 21 02 0D 70 63 69 2D     ".!..pci-"
-0000007A:  64 65 76 69 63 65 2D 68     "device-h"
-00000082:  69 64 64 65 6E 00 ......    "idden."
+00000072:  A4 .....................    "."
+00000073:  12 21 02 0D 70 63 69 2D     ".!..pci-"
+0000007B:  64 65 76 69 63 65 2D 68     "device-h"
+00000083:  69 64 64 65 6E 00 ......    "idden."
 
       23:                      {
       24:                          "pci-device-hidden",
       25:                          Buffer (0x08)
 
-00000088:  11 0B 0A 08 01 00 00 00     "........"
-00000090:  00 00 00 00 ............    "...."
+00000089:  11 0B 0A 08 01 00 00 00     "........"
+00000091:  00 00 00 00 ............    "...."
 
       26:                          {
       27:                               0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
@@ -82,30 +82,30 @@ Compilation of "SSDT-XSPI.asl" - Wed Jan  7 16:04:02 2026
       30:                  }
       32:                  Return (Buffer (One) {})
 
-00000094:  A4 .....................    "."
-00000095:  11 02 01 ...............    "..."
+00000095:  A4 .....................    "."
+00000096:  11 02 01 ...............    "..."
 
       33:              }
       35:              Method (_STA, 0, NotSerialized)  // _STA: Status
 
-00000098:  14 19 5F 53 54 41 00 ...    ".._STA."
+00000099:  14 19 5F 53 54 41 00 ...    ".._STA."
 
       36:              {
       37:                  If (_OSI ("Darwin"))
 
-0000009F:  A0 10 ..................    ".."
-000000A1:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
-000000A9:  77 69 6E 00 ............    "win."
+000000A0:  A0 10 ..................    ".."
+000000A2:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+000000AA:  77 69 6E 00 ............    "win."
 
       38:                  {
       39:                      Return (0x0F)
 
-000000AD:  A4 0A 0F ...............    "..."
+000000AE:  A4 0A 0F ...............    "..."
 
       40:                  }
       42:                  Return (Zero)
 
-000000B0:  A4 00 ..................    ".."
+000000B1:  A4 00 ..................    ".."
       43:              }
       44:          }
       45:      }
@@ -118,9 +118,9 @@ Summary of errors and warnings
 
 ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
 
-ASL Input:     SSDT-XSPI.asl - 48 lines, 1186 bytes, 14 keywords
-AML Output:    SSDT-XSPI.aml - 178 bytes, 5 named objects, 9 executable opcodes
-Listing File:  SSDT-XSPI.lst - 3738 bytes
+ASL Input:     SSDT-XSPI.asl - 48 lines, 1193 bytes, 14 keywords
+AML Output:    SSDT-XSPI.aml - 179 bytes, 5 named objects, 9 executable opcodes
+Listing File:  SSDT-XSPI.lst - 3746 bytes
 
 Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
 

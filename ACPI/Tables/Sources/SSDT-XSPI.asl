@@ -11,7 +11,7 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XSPI", 0x00000000)
             {
                 If (_OSI ("Darwin"))
                 {
-                    If (!Arg2)
+                    If (Arg2 == Zero)
                     {
                         Return (Buffer (One)
                         {
