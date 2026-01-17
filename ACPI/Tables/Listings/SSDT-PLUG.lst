@@ -3,21 +3,21 @@ Intel ACPI Component Architecture
 ASL+ Optimizing Compiler version 20160422-64(RM)
 Copyright (c) 2000 - 2016 Intel Corporation
 
-Compilation of "SSDT-PLUG.asl" - Sat Jan 17 08:16:02 2026
+Compilation of "SSDT-PLUG.asl" - Sat Jan 17 10:48:29 2026
 
        1:  DefinitionBlock ("", "SSDT", 2, "HACK", "PLUG", 0x00000000)
 
 00000000:  53 53 44 54 75 00 00 00     "SSDTu..."
-00000008:  02 67 48 41 43 4B 00 00     ".gHACK.."
+00000008:  02 61 48 41 43 4B 00 00     ".aHACK.."
 00000010:  50 4C 55 47 00 00 00 00     "PLUG...."
 00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
 00000020:  22 04 16 20 ............    "".. "
 00000024:  A0 0E 00 ...............    "..."
 00000027:  15 2E 5F 53 42 5F 50 52     ".._SB_PR"
-0000002F:  30 30 06 00 ............    "00.."
+0000002F:  30 30 0C 00 ............    "00.."
 
        2:  {
-       3:      External (_SB_.PR00, DeviceObj)
+       3:      External (_SB_.PR00, ProcessorObj)
        5:      Scope (\_SB.PR00)
 
 00000033:  10 41 04 5C 2E 5F 53 42     ".A.\._SB"
@@ -78,9 +78,9 @@ Summary of errors and warnings
 
 ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
 
-ASL Input:     SSDT-PLUG.asl - 31 lines, 649 bytes, 8 keywords
+ASL Input:     SSDT-PLUG.asl - 31 lines, 652 bytes, 8 keywords
 AML Output:    SSDT-PLUG.aml - 117 bytes, 2 named objects, 6 executable opcodes
-Listing File:  SSDT-PLUG.lst - 2499 bytes
+Listing File:  SSDT-PLUG.lst - 2502 bytes
 
 Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
 

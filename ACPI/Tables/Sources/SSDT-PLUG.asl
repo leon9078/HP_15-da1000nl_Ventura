@@ -1,6 +1,6 @@
 DefinitionBlock ("", "SSDT", 2, "HACK", "PLUG", 0x00000000)
 {
-    External (_SB_.PR00, DeviceObj)
+    External (_SB_.PR00, ProcessorObj)
 
     Scope (\_SB.PR00)
     {
