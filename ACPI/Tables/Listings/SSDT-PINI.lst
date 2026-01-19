@@ -1,0 +1,47 @@
+
+Intel ACPI Component Architecture
+ASL+ Optimizing Compiler version 20160422-64(RM)
+Copyright (c) 2000 - 2016 Intel Corporation
+
+Compilation of "SSDT-PINI.asl" - Mon Jan 19 19:51:07 2026
+
+       1:  DefinitionBlock ("", "SSDT", 2, "HACK", "PINI", 0x00000000)
+
+00000000:  53 53 44 54 46 00 00 00     "SSDTF..."
+00000008:  02 F5 48 41 43 4B 00 00     "..HACK.."
+00000010:  50 49 4E 49 00 00 00 00     "PINI...."
+00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
+00000020:  22 04 16 20 ............    "".. "
+00000024:  A0 0E 00 ...............    "..."
+00000027:  15 2E 5F 53 42 5F 50 43     ".._SB_PC"
+0000002F:  49 30 06 00 ............    "I0.."
+
+       2:  {
+       3:      External (_SB_.PCI0, DeviceObj)
+       5:      Scope (\_SB.PCI0)
+
+00000033:  10 12 5C 2E 5F 53 42 5F     "..\._SB_"
+0000003B:  50 43 49 30 ............    "PCI0"
+
+       6:      {
+       7:          Method (PINI, 0, NotSerialized)
+
+0000003F:  14 06 50 49 4E 49 00 ...    "..PINI."
+       8:          {
+       9:          }
+      10:      }
+      11:  }
+
+
+
+Summary of errors and warnings
+
+
+ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
+
+ASL Input:     SSDT-PINI.asl - 13 lines, 195 bytes, 2 keywords
+AML Output:    SSDT-PINI.aml - 70 bytes, 2 named objects, 0 executable opcodes
+Listing File:  SSDT-PINI.lst - 1267 bytes
+
+Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
+

@@ -52,6 +52,14 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
+				<string>SSDT-PINI.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
 				<string>SSDT-PLUG.aml</string>
 			</dict>
 			<dict>
@@ -1288,7 +1296,7 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AKAykV9PU0kNV2luZG93cyAyMDAxAF9PU0kNV2luZG93cyAyMDAxIFNQMQBwC9EHT1NZU6AfX09TSQ1XaW5kb3dzIDIwMDEgU1AyAHAL0gdPU1lToB1fT1NJDVdpbmRvd3MgMjAwMS4xAHAL0wdPU1lToBtfT1NJDVdpbmRvd3MgMjAwNgBwC9YHT1NZU6AbX09TSQ1XaW5kb3dzIDIwMDkAcAvZB09TWVOgG19PU0kNV2luZG93cyAyMDEyAHAL3AdPU1lToBtfT1NJDVdpbmRvd3MgMjAxMwBwC90HT1NZU6AbX09TSQ1XaW5kb3dzIDIwMTUAcAvfB09TWVOgKJFfT1NJDVdpbmRvd3MgMjAxNgBfT1NJDURhcndpbgBwC+AHT1NZU6AwkV9PU0kNV2luZG93cyAyMDE3AF9PU0kNV2luZG93cyAyMDE3LjIAcAvhB09TWVOjo6Ojow==</data>
+				<data>AKAykV9PU0kNV2luZG93cyAyMDAxAF9PU0kNV2luZG93cyAyMDAxIFNQMQBwC9EHT1NZU6AfX09TSQ1XaW5kb3dzIDIwMDEgU1AyAHAL0gdPU1lToB1fT1NJDVdpbmRvd3MgMjAwMS4xAHAL0wdPU1lToBtfT1NJDVdpbmRvd3MgMjAwNgBwC9YHT1NZU6AbX09TSQ1XaW5kb3dzIDIwMDkAcAvZB09TWVOgG19PU0kNV2luZG93cyAyMDEyAHAL3AdPU1lToBtfT1NJDVdpbmRvd3MgMjAxMwBwC90HT1NZU6AbX09TSQ1XaW5kb3dzIDIwMTUAcAvfB09TWVOgKJFfT1NJDVdpbmRvd3MgMjAxNgBfT1NJDURhcndpbgBwC+AHT1NZU6AwkV9PU0kNV2luZG93cyAyMDE3AF9PU0kNV2luZG93cyAyMDE3LjIAcAvhB09TWVNeUElOSQ==</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -2437,7 +2445,7 @@
 				<key>bluetoothInternalControllerInfo</key>
 				<data>AAAAAAAAAAAAAAAAAAA=</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 ps2rst=2</string>
+				<string>-v keepsyms=1</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
