@@ -3,12 +3,12 @@ Intel ACPI Component Architecture
 ASL+ Optimizing Compiler version 20160422-64(RM)
 Copyright (c) 2000 - 2016 Intel Corporation
 
-Compilation of "SSDT-HPET.asl" - Mon Dec  8 09:35:48 2025
+Compilation of "SSDT-HPET.asl" - Tue Jan 20 11:23:52 2026
 
        1:  DefinitionBlock ("", "SSDT", 2, "HACK", "HPET", 0x00000000)
 
-00000000:  53 53 44 54 AF 00 00 00     "SSDT...."
-00000008:  02 62 48 41 43 4B 00 00     ".bHACK.."
+00000000:  53 53 44 54 A9 00 00 00     "SSDT...."
+00000008:  02 D6 48 41 43 4B 00 00     "..HACK.."
 00000010:  48 50 45 54 00 00 00 00     "HPET...."
 00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
 00000020:  22 04 16 20 ............    "".. "
@@ -27,15 +27,15 @@ Compilation of "SSDT-HPET.asl" - Mon Dec  8 09:35:48 2025
        4:      External (_SB_.PCI0.LPCB.HPET.XCRS, MethodObj)
        6:      Scope (\_SB.PCI0.LPCB.HPET)
 
-00000056:  10 48 05 5C 2F 04 5F 53     ".H.\/._S"
+00000056:  10 42 05 5C 2F 04 5F 53     ".B.\/._S"
 0000005E:  42 5F 50 43 49 30 4C 50     "B_PCI0LP"
 00000066:  43 42 48 50 45 54 ......    "CBHPET"
 
        7:      {
        8:          Name (BUF1, ResourceTemplate ()
 
-0000006C:  08 42 55 46 31 11 1D 0A     ".BUF1..."
-00000074:  1A .....................    "."
+0000006C:  08 42 55 46 31 11 17 0A     ".BUF1..."
+00000074:  14 .....................    "."
 
        9:          {
       10:              IRQNoFlags ()
@@ -48,50 +48,40 @@ Compilation of "SSDT-HPET.asl" - Mon Dec  8 09:35:48 2025
 
 00000078:  22 00 01 ...............    "".."
 
-      14:              IRQNoFlags ()
-      15:                  {11}
+      14:              Memory32Fixed (ReadWrite,
+      15:                  0xFED00000,         // Address Base
+      16:                  0x00000400,         // Address Length
+      17:                  )
 
-0000007B:  22 00 08 ...............    "".."
+0000007B:  86 09 00 01 00 00 D0 FE     "........"
+00000083:  00 04 00 00 ............    "...."
+00000087:  79 00 ..................    "y."
 
-      16:              IRQNoFlags ()
-      17:                  {12}
+      18:          })
+      19:          Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
 
-0000007E:  22 00 10 ...............    "".."
+00000089:  14 1F 5F 43 52 53 08 ...    ".._CRS."
 
-      18:              Memory32Fixed (ReadWrite,
-      19:                  0xFED00000,         // Address Base
-      20:                  0x00000400,         // Address Length
-      21:                  )
+      20:          {
+      21:              If (_OSI ("Darwin"))
 
-00000081:  86 09 00 01 00 00 D0 FE     "........"
-00000089:  00 04 00 00 ............    "...."
-0000008D:  79 00 ..................    "y."
+00000090:  A0 12 ..................    ".."
+00000092:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+0000009A:  77 69 6E 00 ............    "win."
 
-      22:          })
-      23:          Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+      22:              {
+      23:                  Return (BUF1)
 
-0000008F:  14 1F 5F 43 52 53 08 ...    ".._CRS."
+0000009E:  A4 42 55 46 31 .........    ".BUF1"
 
-      24:          {
-      25:              If (_OSI ("Darwin"))
+      24:              }
+      26:              Return (^XCRS ())
 
-00000096:  A0 12 ..................    ".."
-00000098:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
-000000A0:  77 69 6E 00 ............    "win."
-
-      26:              {
-      27:                  Return (BUF1)
-
-000000A4:  A4 42 55 46 31 .........    ".BUF1"
-
-      28:              }
-      30:              Return (^XCRS ())
-
-000000A9:  A4 .....................    "."
-000000AA:  5E 58 43 52 53 .........    "^XCRS"
-      31:          }
-      32:      }
-      33:  }
+000000A3:  A4 .....................    "."
+000000A4:  5E 58 43 52 53 .........    "^XCRS"
+      27:          }
+      28:      }
+      29:  }
 
 
 
@@ -100,9 +90,9 @@ Summary of errors and warnings
 
 ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
 
-ASL Input:     SSDT-HPET.asl - 35 lines, 830 bytes, 6 keywords
-AML Output:    SSDT-HPET.aml - 175 bytes, 3 named objects, 3 executable opcodes
-Listing File:  SSDT-HPET.lst - 3180 bytes
+ASL Input:     SSDT-HPET.asl - 31 lines, 736 bytes, 6 keywords
+AML Output:    SSDT-HPET.aml - 169 bytes, 3 named objects, 3 executable opcodes
+Listing File:  SSDT-HPET.lst - 2948 bytes
 
 Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
 

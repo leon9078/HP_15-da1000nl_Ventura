@@ -232,7 +232,7 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Add IRQNoFlags 0,8,11,12 to HPET in DSDT, only for macOS</string>
+				<string>Add IRQNoFlags 0,8 to HPET in DSDT, only for macOS</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
@@ -2444,6 +2444,8 @@
 				<data>AA==</data>
 				<key>bluetoothInternalControllerInfo</key>
 				<data>AAAAAAAAAAAAAAAAAAA=</data>
+				<key>boot-args</key>
+				<string>ps2rst=2</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>

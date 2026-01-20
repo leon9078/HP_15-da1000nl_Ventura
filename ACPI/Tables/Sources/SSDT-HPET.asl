@@ -11,10 +11,6 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "HPET", 0x00000000)
                 {0}
             IRQNoFlags ()
                 {8}
-            IRQNoFlags ()
-                {11}
-            IRQNoFlags ()
-                {12}
             Memory32Fixed (ReadWrite,
                 0xFED00000,         // Address Base
                 0x00000400,         // Address Length
