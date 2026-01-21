@@ -1248,6 +1248,36 @@
 			</dict>
 			<dict>
 				<key>Base</key>
+				<string>_SB_.PCI0.RP05._PRW</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Prevent RP05 from waking the system in DSDT, only for macOS</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X1BSVw==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>WAAAAA==</data>
+				<key>ReplaceMask</key>
+				<data>/wAAAA==</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
 				<string>_SB_.PCI0.CNVW._PRW</string>
 				<key>BaseSkip</key>
 				<integer>0</integer>

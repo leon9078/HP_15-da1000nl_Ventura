@@ -16,11 +16,11 @@ In a macOS environment:
 % sudo python3 installinstallmacos.py
 [type the number of the macOS version you want to install]
 % sudo chown -R $(whoami) *
-% hdiutil attach -mountpoint mnt Install_macOS_13.7.8-22H730.dmg
+% cp Install_macOS_13.7.8-22H730.dmg ..
+% hdiutil attach -mountpoint mnt -nobrowse -noverify Install_macOS_13.7.8-22H730.dmg
 % cp -R mnt/Install\ macOS\ Ventura.app /Applications/
 % sudo sync
 % hdiutil detach mnt
-% mv Install_macOS_13.7.8-22H730.dmg ..
 % cd ..
 % rm -rf macadmin-scripts
 
@@ -68,20 +68,34 @@ y
 % sudo sync
 % diskutil umount /dev/diskXs1
 % rm -r HP_15-da1000nl_Ventura-master
-% sudo newfs_hfs -J -v Ventura_Installer /dev/rdiskXs2
-% diskutil mount nobrowse /dev/diskXs2
-% sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/Ventura_Installer --nointeraction
-% sudo sync
-% hdiutil detach /Volumes/Shared\ Support
-% sudo mdutil -d /Volumes/Install\ macOS\ Ventura
-% sudo mdutil -X /Volumes/Install\ macOS\ Ventura
-% sudo rm -rf /Volumes/Install\ macOS\ Ventura/.fseventsd
-% diskutil umount /dev/diskXs2
 % diskutil eject /dev/diskX
+
+Unplug USB flash drive
+
+Reboot macOS into Recovery mode
+
+Click on Apple logo > Riavvia
+Press and hold Win+R (equivalent Cmd+R Apple shortcut combo)
+It will take a while, then it will load into Recovery mode!
+
+Type Cmd+Shift+T to quickly enter Terminal
+
+Plug again the 16+ USB flash drive
+
+# diskutil list
+# newfs_hfs -J -v Ventura_Installer /dev/rdiskXs2
+# diskutil mount nobrowse /dev/diskXs2
+# /Volumes/Macintosh\ HD/Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/Ventura_Installer --nointeraction
+# sync
+# hdiutil detach /Volumes/Shared\ Support
+# diskutil umount /dev/diskXs2
+# diskutil eject /dev/diskX
 
 Unplug macOS Ventura USB drive
 
-Download Arch Linux installer ISO from their official website
+Click on Apple logo > Riavvia
+
+Login, then download Arch Linux installer ISO from their official website
 
 % curl -O https://it.mirrors.cicku.me/archlinux/iso/2026.01.01/{archlinux-2026.01.01-x86_64.iso,sha256sums.txt}
 % shasum -a 256 archlinux-2026.01.01-x86_64.iso | grep --color=yes "<paste SHA-256 of archlinux-2026.01.01.iso>"
@@ -300,24 +314,24 @@ Now at this point it's better to open a new Terminal window and copy/paste the f
 
 Cmd+N
 
-# printf '\33c\e[3J' && curl -Ls https://github.com/leon9078/HP_15-da1000nl_Ventura/raw/refs/heads/master/Instructions.txt | tail -n 115
+# printf '\33c\e[3J' && curl -Ls https://github.com/leon9078/HP_15-da1000nl_Ventura/raw/refs/heads/master/Instructions.txt | tail -n 107
 
-Let's first handle "Pro" and "Novel" profiles, which already have "ShowWindowSettingsNameInTitle" set!
+Let's first handle "Pro" and "Novel" profiles, which already have "ShowWindowSettingsNameInTitle" set, we just need to set it as true!
 
 Pro:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Pro'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Pro:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Pro:ShowActiveProcessArgumentsInTabTitle' bool" \
+-c "Set 'Window Settings:Pro:ShowWindowSettingsNameInTitle' 1" \
 -c "Add 'Window Settings:Pro:ShowRepresentedURLPathInTitle' bool 1" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
 
 Novel:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Novel'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Novel:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Novel:ShowActiveProcessArgumentsInTabTitle' bool" \
+-c "Set 'Window Settings:Novel:ShowWindowSettingsNameInTitle' 1" \
 -c "Add 'Window Settings:Novel:ShowRepresentedURLPathInTitle' bool 1" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
 
 
@@ -328,8 +342,7 @@ Now start covering all other profiles!
 
 Basic:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Basic'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Basic:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Basic:ShowActiveProcessArgumentsInTabTitle' bool" \
 -c "Add 'Window Settings:Basic:ShowWindowSettingsNameInTitle' bool 1" \
@@ -337,8 +350,7 @@ Basic:
 
 Grass:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Grass'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Grass:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Grass:ShowActiveProcessArgumentsInTabTitle' bool" \
 -c "Add 'Window Settings:Grass:ShowWindowSettingsNameInTitle' bool 1" \
@@ -346,8 +358,7 @@ Grass:
 
 Ocean:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Ocean'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Ocean:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Ocean:ShowActiveProcessArgumentsInTabTitle' bool" \
 -c "Add 'Window Settings:Ocean:ShowWindowSettingsNameInTitle' bool 1" \
@@ -355,8 +366,7 @@ Ocean:
 
 Homebrew:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Homebrew'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Homebrew:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Homebrew:ShowActiveProcessArgumentsInTabTitle' bool" \
 -c "Add 'Window Settings:Homebrew:ShowWindowSettingsNameInTitle' bool 1" \
@@ -364,8 +374,7 @@ Homebrew:
 
 Man Page:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Man Page'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Man Page:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Man Page:ShowActiveProcessArgumentsInTabTitle' bool" \
 -c "Add 'Window Settings:Man Page:ShowWindowSettingsNameInTitle' bool 1" \
@@ -373,8 +382,7 @@ Man Page:
 
 Red Sands:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Red Sands'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Red Sands:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Red Sands:ShowActiveProcessArgumentsInTabTitle' bool" \
 -c "Add 'Window Settings:Red Sands:ShowWindowSettingsNameInTitle' bool 1" \
@@ -382,8 +390,7 @@ Red Sands:
 
 Solid Colors:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Solid Colors'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Solid Colors:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Solid Colors:ShowActiveProcessArgumentsInTabTitle' bool" \
 -c "Add 'Window Settings:Solid Colors:ShowWindowSettingsNameInTitle' bool 1" \
@@ -391,8 +398,7 @@ Solid Colors:
 
 Silver Aerogel:
 
-# printf '\33c\e[3J' && /usr/libexec/PlistBuddy -c "Print 'Window Settings:Silver Aerogel'" /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
-# /usr/libexec/PlistBuddy \
+# printf '\33c\e[3J' && /usr/libexec/PlistBuddy \
 -c "Add 'Window Settings:Silver Aerogel:ShowActiveProcessArgumentsInTitle' bool" \
 -c "Add 'Window Settings:Silver Aerogel:ShowActiveProcessArgumentsInTabTitle' bool" \
 -c "Add 'Window Settings:Silver Aerogel:ShowWindowSettingsNameInTitle' bool 1" \
