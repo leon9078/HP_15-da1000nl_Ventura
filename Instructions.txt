@@ -8,6 +8,8 @@ In a macOS environment:
 - Download GPT fdisk (gdisk) tool
 - Download latest Arch Linux ISO
 
+Make sure internet connection is available
+
 % cd ~/Music
 % xcode-select --install
 % git clone --depth 1 https://github.com/munki/macadmin-scripts.git
@@ -67,7 +69,6 @@ y
 % cp -R HP_15-da1000nl_Ventura-master/EFI_USB /Volumes/EFI/EFI
 % sudo sync
 % diskutil umount /dev/diskXs1
-% rm -r HP_15-da1000nl_Ventura-master
 % diskutil eject /dev/diskX
 
 Unplug USB flash drive
@@ -97,6 +98,7 @@ Click on Apple logo > Riavvia
 
 Login, then download Arch Linux installer ISO from their official website
 
+% cd ~/Music
 % curl -O https://it.mirrors.cicku.me/archlinux/iso/2026.01.01/{archlinux-2026.01.01-x86_64.iso,sha256sums.txt}
 % shasum -a 256 archlinux-2026.01.01-x86_64.iso | grep --color=yes "<paste SHA-256 of archlinux-2026.01.01.iso>"
 
@@ -131,12 +133,14 @@ y
 % perl -i -pe 's/(timeout).*/$1 5/;s/(beep).*/$1 off/' /Volumes/ARCH_202601/loader/loader.conf
 % mv /Volumes/ARCH_202601/EFI/BOOT/{,ARCH-}BOOTx64.EFI
 % cp /Volumes/ARCH_202601/shellx64.efi /Volumes/ARCH_202601/EFI/BOOT/BOOTx64.EFI
-% curl -LJ -o /Volumes/ARCH_202601/EFI/BOOT/BIOS_settings.nsh https://github.com/leon9078/HP_15-da1000nl_Ventura/raw/refs/heads/master/BIOS/BIOS_settings.nsh
-% curl -LJ -o /Volumes/ARCH_202601/EFI/TOOLS/uvt.efi --create-dirs https://github.com/leon9078/UefiVarTool/releases/download/1.0.0/uvt.efi
+% cp HP_15-da1000nl_Ventura-master/BIOS/BIOS_settings.nsh /Volumes/ARCH_202601/EFI/BOOT/
+% mkdir /Volumes/ARCH_202601/EFI/TOOLS/
+% cp HP_15-da1000nl_Ventura-master/EFI_USB/TOOLS/uvt.efi /Volumes/ARCH_202601/EFI/TOOLS/
 % printf '@echo -off\r\nARCH-BOOTx64.EFI\r\n' | perl -0777pe 's/(.)/$1\x00/gs;s/^/\xFF\xFE/' > /Volumes/ARCH_202601/EFI/BOOT/startup.nsh
 % sudo sync
 % diskutil umount /dev/diskXs1
 % diskutil eject /dev/diskX
+% rm -r HP_15-da1000nl_Ventura-master
 
 Unplug Arch USB drive
 
@@ -147,14 +151,14 @@ Continuing holding Win+V until we get the CMOS reset screen
 Laptop will reboot several times
 
 
-When we see "Boot device not found" message, plug Arch USB drive to the target laptop
+When we see "Boot Device Not Found" message, plug Arch USB drive to the target laptop
 Ctrl-Alt-Del, press ESC repeatedly, F9, Arch USB, at UEFI Shell press ESC key (within 5 seconds) to skip "startup.nsh" (which will otherwise load Arch systemd-boot)
 At UEFI Shell prompt, we can simply type "bios_settings". UEFI Shell is case-insensitive, so we can type "bios_settings" instead of "BIOS_settings"
 Also we can omit typing the script extension ".nsh"
 
 Shell> bios_settings
 
-After reboot, quickly unplug USB flash drive, wait for "Boot device not found" message. Plug again the Arch USB flash drive and reboot (Ctrl-Alt-Del).
+After reboot, quickly unplug USB flash drive, wait for "Boot Device Not Found" message. Plug again the Arch USB flash drive and reboot (Ctrl-Alt-Del).
 Again, at UEFI Shell press ESC key (within 5 seconds).
 
 Go to this website on another device: https://time.is/UTC
@@ -165,7 +169,7 @@ Shell> reset -s
 
 Unplug Arch USB installer, attach empty NVMe SSD
 
-Boot the PC, "Boot device not found", insert Arch USB installer.
+Boot the PC, "Boot Device Not Found", insert Arch USB installer.
 
 Make sure Ethernet cable or Android USB Tethering is disconnected!
 
@@ -174,7 +178,7 @@ Ctrl-Alt-Del, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43
 # systemctl stop reflector systemd-{networkd-wait-online,timesyncd}
 # systemctl disable reflector systemd-{networkd-wait-online,timesyncd}
 # lsblk -po +FSTYPE,LABEL,PARTLABEL,PARTTYPENAME
-# gdisk /dev/nvme0nX
+# gdisk /dev/nvme0n1
 n
 [Enter, accept default Partition number]
 [Enter, accept default First sector]
@@ -222,6 +226,8 @@ Type Cmd+Shift+T to quickly enter Terminal
 
 Cmd+Q to quit Terminal
 
+Plug the AC adapter NOW, even if the battery is fully charged, otherwise macOS will complain and a message will pop up.
+
 Install macOS Ventura to Macintosh HD.
 
 There will be multiple reboots in the middle.
@@ -237,13 +243,14 @@ Plug Ethernet cable now!
 
 # curl -LJO https://github.com/leon9078/HP_15-da1000nl_Ventura/archive/refs/heads/master.zip
 
-Unplug Ethernet cable!
+Unplug Ethernet cable now!
 
 # unzip -q HP_15-da1000nl_Ventura-master.zip
 # diskutil mount nobrowse /dev/diskXs1
 # cp -R HP_15-da1000nl_Ventura-master/EFI_Target /Volumes/EFI/EFI
 # sync
 # diskutil umount /dev/diskXs1
+# rm -r HP_15-da1000nl_Ventura-master*
 
 Cmd+Q to quit Terminal
 
@@ -251,10 +258,10 @@ Click on Apple logo > Spegni
 
 Unplug macOS USB installer, plug Arch installer one more time.
 
-Boot, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
+Power on the PC, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
 
 # lsblk -po +FSTYPE,LABEL,PARTLABEL,PARTTYPENAME
-# gdisk /dev/nvme0nX
+# gdisk /dev/nvme0n1
 d
 3
 x
@@ -285,7 +292,7 @@ In macOS open Terminal once
 
 % touch .{vim,zsh}rc
 
-Cmq+Q to quit Terminal
+Cmd+Q to quit Terminal
 
 Reboot macOS into Recovery mode
 
@@ -314,7 +321,7 @@ Now at this point it's better to open a new Terminal window and copy/paste the f
 
 Cmd+N
 
-# printf '\33c\e[3J' && curl -Ls https://github.com/leon9078/HP_15-da1000nl_Ventura/raw/refs/heads/master/Instructions.txt | tail -n 107
+# printf '\33c\e[3J' && curl -Ls https://github.com/leon9078/HP_15-da1000nl_Ventura/raw/refs/heads/master/Instructions.txt | tail -n 108
 
 Let's first handle "Pro" and "Novel" profiles, which already have "ShowWindowSettingsNameInTitle" set, we just need to set it as true!
 
@@ -407,7 +414,7 @@ Silver Aerogel:
 # plutil -convert binary1 /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/Library/Preferences/com.apple.Terminal.plist
 # rm -r /Volumes/Macintosh\ HD\ -\ Dati/Users/leonardo/.zsh_*
 
-Cmq+Q to quit Terminal
+Cmd+Q to quit Terminal
 
 Click on Apple Logo > Riavvia
 
@@ -422,3 +429,4 @@ Bonus Terminal commands!
 - Get a list of Sleep/Wake cycles in the current boot session
 
 % printf '\33c\e[3J' && log show --last boot --style syslog --predicate 'process == "powerd" AND category == "sleepWake" AND composedMessage CONTAINS "Entering " OR composedMessage CONTAINS "Wake from "' >&2 >/dev/null
+
