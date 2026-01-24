@@ -132,7 +132,7 @@ y
 % bsdtar -x -v --exclude EFI/BOOT/BOOTIA32.EFI --exclude boot/syslinux/ --exclude shellia32.efi -f archlinux-2026.01.01-x86_64.iso -C /Volumes/ARCH_202601
 % perl -i -pe 's/(timeout).*/$1 5/;s/(beep).*/$1 off/' /Volumes/ARCH_202601/loader/loader.conf
 % mv /Volumes/ARCH_202601/EFI/BOOT/{,ARCH-}BOOTx64.EFI
-% cp /Volumes/ARCH_202601/shellx64.efi /Volumes/ARCH_202601/EFI/BOOT/BOOTx64.EFI
+% cp /Volumes/ARCH_202601/{shellx64.efi,EFI/BOOT/BOOTx64.EFI}
 % cp HP_15-da1000nl_Ventura-master/BIOS/BIOS_settings.nsh /Volumes/ARCH_202601/EFI/BOOT/
 % mkdir /Volumes/ARCH_202601/EFI/TOOLS/
 % cp HP_15-da1000nl_Ventura-master/EFI_USB/TOOLS/uvt.efi /Volumes/ARCH_202601/EFI/TOOLS/
