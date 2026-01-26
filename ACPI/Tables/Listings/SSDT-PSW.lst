@@ -3,16 +3,16 @@ Intel ACPI Component Architecture
 ASL+ Optimizing Compiler version 20160422-64(RM)
 Copyright (c) 2000 - 2016 Intel Corporation
 
-Compilation of "SSDT-PSW.asl" - Sat Jan 17 08:20:03 2026
+Compilation of "SSDT-PSW.asl" - Mon Jan 26 17:51:29 2026
 
        1:  DefinitionBlock ("", "SSDT", 2, "HACK", "PSW", 0x00000000)
 
-00000000:  53 53 44 54 F6 00 00 00     "SSDT...."
-00000008:  02 77 48 41 43 4B 00 00     ".wHACK.."
+00000000:  53 53 44 54 DC 00 00 00     "SSDT...."
+00000008:  02 17 48 41 43 4B 00 00     "..HACK.."
 00000010:  50 53 57 00 00 00 00 00     "PSW....."
 00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
 00000020:  22 04 16 20 ............    "".. "
-00000024:  A0 4B 05 00 ............    ".K.."
+00000024:  A0 46 04 00 ............    ".F.."
 00000028:  15 2F 05 5F 53 42 5F 50     "./._SB_P"
 00000030:  43 49 30 4C 50 43 42 45     "CI0LPCBE"
 00000038:  43 5F 5F 41 44 50 54 05     "C__ADPT."
@@ -24,65 +24,64 @@ Compilation of "SSDT-PSW.asl" - Sat Jan 17 08:20:03 2026
 0000005A:  15 2F 03 5F 53 42 5F 50     "./._SB_P"
 00000062:  43 49 30 58 48 43 5F 06     "CI0XHC_."
 0000006A:  00 .....................    "."
-0000006B:  15 2F 04 5F 53 42 5F 50     "./._SB_P"
-00000073:  43 49 30 58 48 43 5F 58     "CI0XHC_X"
-0000007B:  50 52 54 0A 00 .........    "PRT.."
 
        2:  {
        3:      External (_SB_.PCI0.LPCB.EC__.ADPT, FieldUnitObj)
        4:      External (_SB_.PCI0.LPCB.EC__.UWAK, FieldUnitObj)
        5:      External (_SB_.PCI0.XHC_, DeviceObj)
-       6:      External (_SB_.PCI0.XHC_.XPRT, OpRegionObj)
-       8:      Field (\_SB.PCI0.XHC.XPRT, AnyAcc, NoLock, Preserve)
-       9:      {
-      10:          Offset (0x75),
-      11:          PMEE,   1
-      12:      }
+       7:      Scope (\_SB.PCI0.XHC)
 
-00000080:  5B 81 1D 5C 2F 04 5F 53     "[..\/._S"
-00000088:  42 5F 50 43 49 30 58 48     "B_PCI0XH"
-00000090:  43 5F 58 50 52 54 00 00     "C_XPRT.."
-00000098:  48 3A 50 4D 45 45 01 ...    "H:PMEE."
+0000006B:  10 40 07 5C 2F 03 5F 53     ".@.\/._S"
+00000073:  42 5F 50 43 49 30 58 48     "B_PCI0XH"
+0000007B:  43 5F ..................    "C_"
 
-      14:      Scope (\_SB.PCI0.XHC)
+       8:      {
+       9:          OperationRegion (PMCS, PCI_Config, 0x74, 0x02)
 
-0000009F:  10 46 05 5C 2F 03 5F 53     ".F.\/._S"
-000000A7:  42 5F 50 43 49 30 58 48     "B_PCI0XH"
-000000AF:  43 5F ..................    "C_"
+0000007D:  5B 80 50 4D 43 53 02 0A     "[.PMCS.."
+00000085:  74 0A 02 ...............    "t.."
 
-      15:      {
+      10:          Field (PMCS, AnyAcc, NoLock, Preserve)
+      11:          {
+      12:              Offset (0x01),
+      13:              PMEE,   1
+      14:          }
+
+00000088:  5B 81 0D 50 4D 43 53 00     "[..PMCS."
+00000090:  00 08 50 4D 45 45 01 ...    "..PMEE."
+
       16:          Method (_PSW, 1, NotSerialized)  // _PSW: Power State Wake
 
-000000B1:  14 44 04 5F 50 53 57 01     ".D._PSW."
+00000097:  14 44 04 5F 50 53 57 01     ".D._PSW."
 
       17:          {
       18:              If (_OSI ("Darwin"))
 
-000000B9:  A0 3C ..................    ".<"
-000000BB:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
-000000C3:  77 69 6E 00 ............    "win."
+0000009F:  A0 3C ..................    ".<"
+000000A1:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+000000A9:  77 69 6E 00 ............    "win."
 
       19:              {
       20:                  If (^^LPCB.EC.ADPT != One)
 
-000000C7:  A0 1A 92 93 5E 5E 2F 03     "....^^/."
-000000CF:  4C 50 43 42 45 43 5F 5F     "LPCBEC__"
-000000D7:  41 44 50 54 01 .........    "ADPT."
+000000AD:  A0 1A 92 93 5E 5E 2F 03     "....^^/."
+000000B5:  4C 50 43 42 45 43 5F 5F     "LPCBEC__"
+000000BD:  41 44 50 54 01 .........    "ADPT."
 
       21:                  {
       22:                      PMEE = Zero
 
-000000DC:  70 00 50 4D 45 45 ......    "p.PMEE"
+000000C2:  70 00 50 4D 45 45 ......    "p.PMEE"
 
       23:                  }
       24:                  Else
       25:                  {
       26:                      ^^LPCB.EC.UWAK = Arg0
 
-000000E2:  A1 13 ..................    ".."
-000000E4:  70 68 5E 5E 2F 03 4C 50     "ph^^/.LP"
-000000EC:  43 42 45 43 5F 5F 55 57     "CBEC__UW"
-000000F4:  41 4B ..................    "AK"
+000000C8:  A1 13 ..................    ".."
+000000CA:  70 68 5E 5E 2F 03 4C 50     "ph^^/.LP"
+000000D2:  43 42 45 43 5F 5F 55 57     "CBEC__UW"
+000000DA:  41 4B ..................    "AK"
       27:                  }
       28:              }
       29:          }
@@ -96,9 +95,9 @@ Summary of errors and warnings
 
 ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
 
-ASL Input:     SSDT-PSW.asl - 33 lines, 768 bytes, 9 keywords
-AML Output:    SSDT-PSW.aml - 246 bytes, 3 named objects, 6 executable opcodes
-Listing File:  SSDT-PSW.lst - 3408 bytes
+ASL Input:     SSDT-PSW.asl - 33 lines, 781 bytes, 10 keywords
+AML Output:    SSDT-PSW.aml - 220 bytes, 4 named objects, 6 executable opcodes
+Listing File:  SSDT-PSW.lst - 3272 bytes
 
 Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
 
