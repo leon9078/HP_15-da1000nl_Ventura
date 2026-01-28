@@ -140,6 +140,14 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
+				<string>SSDT-XOSI.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
 				<string>SSDT-XSPI.aml</string>
 			</dict>
 		</array>
@@ -1304,23 +1312,23 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Add Darwin to PCI initialization in DSDT, in order to enable Bluetooth</string>
+				<string>Enable Bluetooth in DSDT, only for macOS</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>AKAAX09TSQ1XaW5kb3dzIDIwMDEAcAvRB09TWVOgAF9PU0kNV2luZG93cyAyMDAxIFNQMQBwC9EHT1NZU6AAX09TSQ1XaW5kb3dzIDIwMDEgU1AyAHAL0gdPU1lToABfT1NJDVdpbmRvd3MgMjAwMS4xAHAL0wdPU1lToABfT1NJDVdpbmRvd3MgMjAwNgBwC9YHT1NZU6AAX09TSQ1XaW5kb3dzIDIwMDkAcAvZB09TWVOgAF9PU0kNV2luZG93cyAyMDEyAHAL3AdPU1lToABfT1NJDVdpbmRvd3MgMjAxMwBwC90HT1NZU6AAX09TSQ1XaW5kb3dzIDIwMTUAcAvfB09TWVOgAF9PU0kNV2luZG93cyAyMDE2AHAL4AdPU1lToABfT1NJDVdpbmRvd3MgMjAxNwBwC+EHT1NZU6AAX09TSQ1XaW5kb3dzIDIwMTcuMgBwC+EHT1NZUw==</data>
+				<data>X09TSQ1XaW5kb3dzIDIwMTYA</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>AP8A////////////////////////////////////AP////////////////////////////////////////8A/////////////////////////////////////////wD//////////////////////////////////////wD///////////////////////////////////8A////////////////////////////////////AP///////////////////////////////////wD///////////////////////////////////8A////////////////////////////////////AP///////////////////////////////////wD///////////////////////////////////8A/////////////////////////////////////w==</data>
+				<data></data>
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AKAykV9PU0kNV2luZG93cyAyMDAxAF9PU0kNV2luZG93cyAyMDAxIFNQMQBwC9EHT1NZU6AfX09TSQ1XaW5kb3dzIDIwMDEgU1AyAHAL0gdPU1lToB1fT1NJDVdpbmRvd3MgMjAwMS4xAHAL0wdPU1lToBtfT1NJDVdpbmRvd3MgMjAwNgBwC9YHT1NZU6AbX09TSQ1XaW5kb3dzIDIwMDkAcAvZB09TWVOgG19PU0kNV2luZG93cyAyMDEyAHAL3AdPU1lToBtfT1NJDVdpbmRvd3MgMjAxMwBwC90HT1NZU6AbX09TSQ1XaW5kb3dzIDIwMTUAcAvfB09TWVOgKJFfT1NJDVdpbmRvd3MgMjAxNgBfT1NJDURhcndpbgBwC+AHT1NZU6AwkV9PU0kNV2luZG93cyAyMDE3AF9PU0kNV2luZG93cyAyMDE3LjIAcAvhB09TWVNXQUtfaA==</data>
+				<data>WAAAAAAAAAAAAAAAAAAAAAAA</data>
 				<key>ReplaceMask</key>
-				<data></data>
+				<data>/wAAAAAAAAAAAAAAAAAAAAAA</data>
 				<key>Skip</key>
 				<integer>0</integer>
 				<key>TableLength</key>
@@ -2196,13 +2204,13 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>sAIAAAA=</data>
+				<data>ugIAAAA=</data>
 				<key>Identifier</key>
 				<string>com.apple.driver.AppleACPIPlatform</string>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>8P////8=</data>
+				<data></data>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -2210,7 +2218,7 @@
 				<key>Replace</key>
 				<data>AAEAAAA=</data>
 				<key>ReplaceMask</key>
-				<data>AA8AAAA=</data>
+				<data>AP8AAAA=</data>
 				<key>Skip</key>
 				<integer>0</integer>
 			</dict>
