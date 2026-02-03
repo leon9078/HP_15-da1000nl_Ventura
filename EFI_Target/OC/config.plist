@@ -618,29 +618,59 @@
 			</dict>
 			<dict>
 				<key>Base</key>
-				<string></string>
+				<string>_SB_.PCI0.RP13.PXSX</string>
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 14 of 14</string>
+				<string>Replace RP13.PXSX with SSD0 in DSDT. 1 of 6</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>Xl4AAFBDSTBSUAAAUFhTWFdHU1Q=</data>
+				<data>UFhTWA==</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>//8AAP///////wAA//////////8=</data>
+				<data></data>
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAQVJQVAAAAAA=</data>
+				<data>U1NEMA==</data>
 				<key>ReplaceMask</key>
-				<data>AAAAAAAAAAAAAAAA/////wAAAAA=</data>
+				<data></data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string>_SB_.PCI0.RP13.HPME</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Replace RP13.PXSX with SSD0 in DSDT. 2 of 6</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>UFhTWA==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>U1NEMA==</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -652,25 +682,25 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 13 of 14</string>
+				<string>Replace RP13.PXSX with SSD0 in DSDT. 3 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>Xl4AAFBDSTBSUAAAUFhTWFdJU1Q=</data>
+				<data>EAAALwRfU0JfUENJMFJQMTNQWFNY</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>//8AAP///////wAA//////////8=</data>
+				<data>/wAA////////////////////////</data>
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAQVJQVAAAAAA=</data>
+				<data>AAAAAAAAAAAAAAAAAAAAAABTU0Qw</data>
 				<key>ReplaceMask</key>
-				<data>AAAAAAAAAAAAAAAA/////wAAAAA=</data>
+				<data>AAAAAAAAAAAAAAAAAAAAAAD/////</data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -682,25 +712,25 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 12 of 14</string>
+				<string>Replace RP13.PXSX with SSD0 in DSDT. 4 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>Xl4AAFBDSTBSUAAAUFhTWFBOVk0=</data>
+				<data>QURCRw1QWFNYIFBSIF8=</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>//8AAP///////wAA//////////8=</data>
+				<data></data>
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAQVJQVAAAAAA=</data>
+				<data>AAAAAABTU0QwAAAAAAA=</data>
 				<key>ReplaceMask</key>
-				<data>AAAAAAAAAAAAAAAA/////wAAAAA=</data>
+				<data>AAAAAAD/////AAAAAAA=</data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>48</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -712,25 +742,25 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 11 of 14</string>
+				<string>Replace RP13.PXSX with SSD0 in DSDT. 5 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>Xl4AAFBDSTBSUAAAUFhTWFBBSEM=</data>
+				<data>DVxfU0IuUENJMC5SUDEzLlBYU1gA</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>//8AAP///////wAA//////////8=</data>
+				<data></data>
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAQVJQVAAAAAA=</data>
+				<data>AAAAAAAAAAAAAAAAAAAAAFNTRDAA</data>
 				<key>ReplaceMask</key>
-				<data>AAAAAAAAAAAAAAAA/////wAAAAA=</data>
+				<data>AAAAAAAAAAAAAAAAAAAAAP////8A</data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -742,25 +772,85 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 10 of 14</string>
+				<string>Replace RP13.PXSX with SSD0 in DSDT. 6 of 6</string>
+				<key>Count</key>
+				<integer>4</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>Xl4vBFBDSTBSUDEzUFhTWA==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAAAU1NEMA==</data>
+				<key>ReplaceMask</key>
+				<data>AAAAAAAAAAAAAAAA/////w==</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string>_SB_.PCI0.RP10.PXSX</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Replace RP10.PXSX with ARPT in DSDT. 1 of 6</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>DVxfU0IuUENJMC5SUAAALlBYU1g=</data>
+				<data>UFhTWA==</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>/////////////////wAA//////8=</data>
+				<data></data>
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAAAAAAEFSUFQ=</data>
+				<data>QVJQVA==</data>
 				<key>ReplaceMask</key>
-				<data>AAAAAAAAAAAAAAAAAAAAAP////8=</data>
+				<data></data>
 				<key>Skip</key>
-				<integer>29</integer>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string>_SB_.PCI0.RP10.HPME</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Replace RP10.PXSX with ARPT in DSDT. 2 of 6</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>UFhTWA==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>QVJQVA==</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -772,47 +862,17 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 9 of 14</string>
+				<string>Replace RP10.PXSX with ARPT in DSDT. 3 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>DVxfU0IuUENJMC5SUAAALlBYU1g=</data>
+				<data>EAAALwRfU0JfUENJMFJQMTBQWFNY</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>/////////////////wAA//////8=</data>
-				<key>OemTableId</key>
-				<data>U0xJQy1NUEM=</data>
-				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAAAAAAEFSUFQ=</data>
-				<key>ReplaceMask</key>
-				<data>AAAAAAAAAAAAAAAAAAAAAP////8=</data>
-				<key>Skip</key>
-				<integer>9</integer>
-				<key>TableLength</key>
-				<integer>264619</integer>
-				<key>TableSignature</key>
-				<data>RFNEVA==</data>
-			</dict>
-			<dict>
-				<key>Base</key>
-				<string></string>
-				<key>BaseSkip</key>
-				<integer>0</integer>
-				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 8 of 14</string>
-				<key>Count</key>
-				<integer>1</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>EAAAAABfU0JfUENJMFJQAABQWFNY</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>/wAAAAD/////////////AAD/////</data>
+				<data>/wAA////////////////////////</data>
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
@@ -820,7 +880,7 @@
 				<key>ReplaceMask</key>
 				<data>AAAAAAAAAAAAAAAAAAAAAAD/////</data>
 				<key>Skip</key>
-				<integer>29</integer>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -832,13 +892,13 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 7 of 14</string>
+				<string>Replace RP10.PXSX with ARPT in DSDT. 4 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>QURCRw1QWFNYIFBSIF9SU1Q=</data>
+				<data>QURCRw1QWFNYIFBSIF8=</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -846,11 +906,11 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAABBUlBUAAAAAAAAAAA=</data>
+				<data>AAAAAABBUlBUAAAAAAA=</data>
 				<key>ReplaceMask</key>
-				<data>AAAAAAD/////AAAAAAAAAAA=</data>
+				<data>AAAAAAD/////AAAAAAA=</data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>36</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -862,13 +922,13 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 6 of 14</string>
+				<string>Replace RP10.PXSX with ARPT in DSDT. 5 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>QURCRw1QWFNYIFBSIF9PRkY=</data>
+				<data>DVxfU0IuUENJMC5SUDEwLlBYU1gA</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -876,11 +936,11 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAABBUlBUAAAAAAAAAAA=</data>
+				<data>AAAAAAAAAAAAAAAAAAAAAEFSUFQA</data>
 				<key>ReplaceMask</key>
-				<data>AAAAAAD/////AAAAAAAAAAA=</data>
+				<data>AAAAAAAAAAAAAAAAAAAAAP////8A</data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -892,13 +952,13 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 5 of 14</string>
+				<string>Replace RP10.PXSX with ARPT in DSDT. 6 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>QURCRw1QWFNYIFBSIF9PTg==</data>
+				<data>Xl4vBFBDSTBSUDEwUFhTWA==</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -906,11 +966,11 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAABBUlBUAAAAAAAAAA==</data>
+				<data>AAAAAAAAAAAAAAAAQVJQVA==</data>
 				<key>ReplaceMask</key>
-				<data>AAAAAAD/////AAAAAAAAAA==</data>
+				<data>AAAAAAAAAAAAAAAA/////w==</data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -918,17 +978,17 @@
 			</dict>
 			<dict>
 				<key>Base</key>
-				<string></string>
+				<string>_SB_.PCI0.RP09.PXSX</string>
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 4 of 14</string>
+				<string>Replace RP09.PXSX with GIGE in DSDT. 1 of 6</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>QURCRw1QWFNYIFBSIF9TVEE=</data>
+				<data>UFhTWA==</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -936,11 +996,41 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAABBUlBUAAAAAAAAAAA=</data>
+				<data>R0lHRQ==</data>
 				<key>ReplaceMask</key>
-				<data>AAAAAAD/////AAAAAAAAAAA=</data>
+				<data></data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string>_SB_.PCI0.RP09.HPME</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Replace RP09.PXSX with GIGE in DSDT. 2 of 6</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>UFhTWA==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>R0lHRQ==</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -952,25 +1042,25 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 3 of 14</string>
+				<string>Replace RP09.PXSX with GIGE in DSDT. 3 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>EAAAAABfU0JfUENJMFJQAABQWFNY</data>
+				<data>EAAALwRfU0JfUENJMFJQMDlQWFNY</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>/wAAAAD/////////////AAD/////</data>
+				<data>/wAA////////////////////////</data>
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAAAAAAABBUlBU</data>
+				<data>AAAAAAAAAAAAAAAAAAAAAABHSUdF</data>
 				<key>ReplaceMask</key>
 				<data>AAAAAAAAAAAAAAAAAAAAAAD/////</data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -982,13 +1072,13 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 2 of 14</string>
+				<string>Replace RP09.PXSX with GIGE in DSDT. 4 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>hlBYU1g=</data>
+				<data>QURCRw1QWFNYIFBSIF8=</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -996,11 +1086,11 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>AEFSUFQ=</data>
+				<data>AAAAAABHSUdFAAAAAAA=</data>
 				<key>ReplaceMask</key>
-				<data>AP////8=</data>
+				<data>AAAAAAD/////AAAAAAA=</data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>32</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -1012,13 +1102,13 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Replace RP10.PXSX with ARPT in DSDT. 1 of 14</string>
+				<string>Replace RP09.PXSX with GIGE in DSDT. 5 of 6</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>UFhTWAg=</data>
+				<data>DVxfU0IuUENJMC5SUDA5LlBYU1gA</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -1026,11 +1116,41 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>QVJQVAA=</data>
+				<data>AAAAAAAAAAAAAAAAAAAAAEdJR0UA</data>
 				<key>ReplaceMask</key>
-				<data>/////wA=</data>
+				<data>AAAAAAAAAAAAAAAAAAAAAP////8A</data>
 				<key>Skip</key>
-				<integer>9</integer>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string></string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Replace RP09.PXSX with GIGE in DSDT. 6 of 6</string>
+				<key>Count</key>
+				<integer>4</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>Xl4vBFBDSTBSUDA5UFhTWA==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAAAR0lHRQ==</data>
+				<key>ReplaceMask</key>
+				<data>AAAAAAAAAAAAAAAA/////w==</data>
+				<key>Skip</key>
+				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>264619</integer>
 				<key>TableSignature</key>
@@ -1314,11 +1434,11 @@
 				<key>Comment</key>
 				<string>Enable Bluetooth in DSDT, only for macOS</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>X09TSQ1XaW5kb3dzIDIwMTYA</data>
+				<data>X09TSQ0=</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -1326,9 +1446,9 @@
 				<key>OemTableId</key>
 				<data>U0xJQy1NUEM=</data>
 				<key>Replace</key>
-				<data>WAAAAAAAAAAAAAAAAAAAAAAA</data>
+				<data>WAAAAAA=</data>
 				<key>ReplaceMask</key>
-				<data>/wAAAAAAAAAAAAAAAAAAAAAA</data>
+				<data>/wAAAAA=</data>
 				<key>Skip</key>
 				<integer>0</integer>
 				<key>TableLength</key>

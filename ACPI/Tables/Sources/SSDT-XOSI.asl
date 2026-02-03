@@ -4,12 +4,9 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "XOSI", 0x00000000)
     {
         Method (XOSI, 1, NotSerialized)
         {
-            If (_OSI ("Darwin"))
+            If (_OSI ("Darwin") && (Arg0 == "Windows 2017.2"))
             {
-                Return ((Match (Package (One)
-                            {
-                                "Windows 2016"
-                            }, MEQ, Arg0, MTR, Zero, Zero) != Ones))
+                Return (Ones)
             }
             Else
             {
