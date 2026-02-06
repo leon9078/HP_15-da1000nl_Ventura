@@ -36,7 +36,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-MCHC.aml</string>
+				<string>SSDT-INI.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -44,7 +44,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-NVOP_PS3.aml</string>
+				<string>SSDT-MCHC.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -1428,6 +1428,36 @@
 			</dict>
 			<dict>
 				<key>Base</key>
+				<string>_SB_.PCI0._INI</string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Disable NVIDIA GPU in DSDT, only for macOS</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X0lOSQ==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>U0xJQy1NUEM=</data>
+				<key>Replace</key>
+				<data>WAAAAA==</data>
+				<key>ReplaceMask</key>
+				<data>/wAAAA==</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>264619</integer>
+				<key>TableSignature</key>
+				<data>RFNEVA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
 				<string></string>
 				<key>BaseSkip</key>
 				<integer>0</integer>
@@ -1455,36 +1485,6 @@
 				<integer>264619</integer>
 				<key>TableSignature</key>
 				<data>RFNEVA==</data>
-			</dict>
-			<dict>
-				<key>Base</key>
-				<string>_SB_.PCI0.RP05.PXSX._INI</string>
-				<key>BaseSkip</key>
-				<integer>0</integer>
-				<key>Comment</key>
-				<string>Disable NVIDIA GPU in SSDT size 14551, only for macOS</string>
-				<key>Count</key>
-				<integer>1</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>X0lOSQ==</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>OemTableId</key>
-				<data>SU5TWURFICA=</data>
-				<key>Replace</key>
-				<data>WAAAAA==</data>
-				<key>ReplaceMask</key>
-				<data>/wAAAA==</data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>14551</integer>
-				<key>TableSignature</key>
-				<data>U1NEVA==</data>
 			</dict>
 		</array>
 		<key>Quirks</key>
