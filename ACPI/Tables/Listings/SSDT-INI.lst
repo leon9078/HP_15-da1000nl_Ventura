@@ -3,12 +3,12 @@ Intel ACPI Component Architecture
 ASL+ Optimizing Compiler version 20160422-64(RM)
 Copyright (c) 2000 - 2016 Intel Corporation
 
-Compilation of "SSDT-INI.asl" - Fri Feb  6 09:43:49 2026
+Compilation of "SSDT-INI.asl" - Sat Feb  7 18:26:57 2026
 
        1:  DefinitionBlock ("", "SSDT", 2, "HACK", "INI", 0x00000000)
 
-00000000:  53 53 44 54 08 01 00 00     "SSDT...."
-00000008:  02 0C 48 41 43 4B 00 00     "..HACK.."
+00000000:  53 53 44 54 0A 01 00 00     "SSDT...."
+00000008:  02 A8 48 41 43 4B 00 00     "..HACK.."
 00000010:  49 4E 49 00 00 00 00 00     "INI....."
 00000018:  00 00 00 00 49 4E 54 4C     "....INTL"
 00000020:  22 04 16 20 ............    "".. "
@@ -37,55 +37,60 @@ Compilation of "SSDT-INI.asl" - Fri Feb  6 09:43:49 2026
        6:      External (_SB_.PCI0.XINI, MethodObj)
        8:      Scope (\_SB.PCI0)
 
-0000007A:  10 4D 08 5C 2E 5F 53 42     ".M.\._SB"
+0000007A:  10 4F 08 5C 2E 5F 53 42     ".O.\._SB"
 00000082:  5F 50 43 49 30 .........    "_PCI0"
 
        9:      {
       10:          Method (_INI, 0, Serialized)  // _INI: Initialize
 
-00000087:  14 40 08 5F 49 4E 49 08     ".@._INI."
+00000087:  14 42 08 5F 49 4E 49 08     ".B._INI."
 
       11:          {
       12:              ^XINI ()
 
 0000008F:  5E 58 49 4E 49 .........    "^XINI"
 
-      13:              If (_OSI ("Darwin") && (CondRefOf (^RP05.PXSX._DSM) && CondRefOf (^RP05.PXSX._PS3)))
+      13:              If (_OSI ("Darwin"))
 
-00000094:  A0 43 07 ...............    ".C."
-00000097:  90 .....................    "."
-00000098:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
-000000A0:  77 69 6E 00 ............    "win."
-000000A4:  90 .....................    "."
-000000A5:  5B 12 5E 2F 03 52 50 30     "[.^/.RP0"
-000000AD:  35 50 58 53 58 5F 44 53     "5PXSX_DS"
-000000B5:  4D 00 ..................    "M."
-000000B7:  5B 12 5E 2F 03 52 50 30     "[.^/.RP0"
-000000BF:  35 50 58 53 58 5F 50 53     "5PXSX_PS"
-000000C7:  33 00 ..................    "3."
+00000094:  A0 45 07 ...............    ".E."
+00000097:  5F 4F 53 49 0D 44 61 72     "_OSI.Dar"
+0000009F:  77 69 6E 00 ............    "win."
 
       14:              {
-      15:                  ^RP05.PXSX._DSM (ToUUID ("a486d8f8-0bda-471b-a72b-6042a6b5bee0"), 0x0100, 0x1A, Buffer (0x04)
+      15:                  If (CondRefOf (^RP05.PXSX._DSM) && CondRefOf (^RP05.PXSX._PS3))
 
-000000C9:  5E 2F 03 52 50 30 35 50     "^/.RP05P"
-000000D1:  58 53 58 5F 44 53 4D ...    "XSX_DSM"
-000000D8:  11 13 0A 10 F8 D8 86 A4     "........"
-000000E0:  DA 0B 1B 47 A7 2B 60 42     "...G.+`B"
-000000E8:  A6 B5 BE E0 0B 00 01 0A     "........"
-000000F0:  1A .....................    "."
-000000F1:  11 07 0A 04 01 00 00 03     "........"
+000000A3:  A0 46 06 ...............    ".F."
+000000A6:  90 .....................    "."
+000000A7:  5B 12 5E 2F 03 52 50 30     "[.^/.RP0"
+000000AF:  35 50 58 53 58 5F 44 53     "5PXSX_DS"
+000000B7:  4D 00 ..................    "M."
+000000B9:  5B 12 5E 2F 03 52 50 30     "[.^/.RP0"
+000000C1:  35 50 58 53 58 5F 50 53     "5PXSX_PS"
+000000C9:  33 00 ..................    "3."
 
-      16:                      {
-      17:                           0x01, 0x00, 0x00, 0x03
-      18:                      })
-      19:                  ^RP05.PXSX._PS3 ()
+      16:                  {
+      17:                      ^RP05.PXSX._DSM (ToUUID ("a486d8f8-0bda-471b-a72b-6042a6b5bee0"), 0x0100, 0x1A, Buffer (0x04)
 
-000000F9:  5E 2F 03 52 50 30 35 50     "^/.RP05P"
-00000101:  58 53 58 5F 50 53 33 ...    "XSX_PS3"
-      20:              }
-      21:          }
-      22:      }
-      23:  }
+000000CB:  5E 2F 03 52 50 30 35 50     "^/.RP05P"
+000000D3:  58 53 58 5F 44 53 4D ...    "XSX_DSM"
+000000DA:  11 13 0A 10 F8 D8 86 A4     "........"
+000000E2:  DA 0B 1B 47 A7 2B 60 42     "...G.+`B"
+000000EA:  A6 B5 BE E0 0B 00 01 0A     "........"
+000000F2:  1A .....................    "."
+000000F3:  11 07 0A 04 01 00 00 03     "........"
+
+      18:                          {
+      19:                               0x01, 0x00, 0x00, 0x03
+      20:                          })
+      21:                      ^RP05.PXSX._PS3 ()
+
+000000FB:  5E 2F 03 52 50 30 35 50     "^/.RP05P"
+00000103:  58 53 58 5F 50 53 33 ...    "XSX_PS3"
+      22:                  }
+      23:              }
+      24:          }
+      25:      }
+      26:  }
 
 
 
@@ -94,9 +99,9 @@ Summary of errors and warnings
 
 ASL+ Optimizing Compiler version 20160422-64 [Apr 22 2016]
 
-ASL Input:     SSDT-INI.asl - 25 lines, 739 bytes, 7 keywords
-AML Output:    SSDT-INI.aml - 264 bytes, 2 named objects, 5 executable opcodes
-Listing File:  SSDT-INI.lst - 3613 bytes
+ASL Input:     SSDT-INI.asl - 28 lines, 811 bytes, 7 keywords
+AML Output:    SSDT-INI.aml - 266 bytes, 2 named objects, 5 executable opcodes
+Listing File:  SSDT-INI.lst - 3722 bytes
 
 Compilation complete. 0 Errors, 0 Warnings, 0 Remarks, 0 Optimizations
 
