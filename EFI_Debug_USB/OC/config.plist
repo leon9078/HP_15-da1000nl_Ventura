@@ -1721,7 +1721,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>19.0.0</string>
+				<string>18.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -2712,7 +2712,7 @@
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>ProcessorType</key>
-			<integer>1537</integer>
+			<integer>1801</integer>
 			<key>ROM</key>
 			<data>5OdJZ7rq</data>
 			<key>SpoofVendor</key>
