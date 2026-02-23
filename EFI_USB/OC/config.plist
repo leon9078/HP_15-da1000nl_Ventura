@@ -2595,7 +2595,7 @@
 				<key>bluetoothInternalControllerInfo</key>
 				<data>AAAAAAAAAAAAAAAAAAA=</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 ps2rst=2</string>
+				<string>-v keepsyms=1 ps2rst=2 -btlfxallowanyaddr</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -2694,7 +2694,7 @@
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>ProcessorType</key>
-			<integer>1801</integer>
+			<integer>1545</integer>
 			<key>ROM</key>
 			<data>5OdJZ7rq</data>
 			<key>SpoofVendor</key>
