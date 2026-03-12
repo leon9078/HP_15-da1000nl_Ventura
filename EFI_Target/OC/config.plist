@@ -2576,7 +2576,7 @@
 				<key>revcpuname</key>
 				<string>Intel Core i7-8565U</string>
 				<key>revpatch</key>
-				<string>cpuname,diskread</string>
+				<string>cpuname,diskread,hashmismatch</string>
 				<key>rtc-blacklist</key>
 				<data>EBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi9OT2xtbo/u9w==</data>
 			</dict>
@@ -2595,7 +2595,7 @@
 				<key>bluetoothInternalControllerInfo</key>
 				<data>AAAAAAAAAAAAAAAAAAA=</data>
 				<key>boot-args</key>
-				<string>ps2rst=2 -btlfxallowanyaddr</string>
+				<string>ps2rst=2</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>

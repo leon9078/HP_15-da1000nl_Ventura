@@ -173,7 +173,7 @@ Boot the PC, "Boot Device Not Found", insert Arch USB installer.
 
 Make sure Ethernet cable or Android USB Tethering is disconnected!
 
-Ctrl-Alt-Del, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
+Ctrl-Alt-Del, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb psmouse.synaptics_intertouch=1 quiet loglevel=0"
 
 # systemctl stop reflector systemd-{networkd-wait-online,timesyncd}
 # systemctl disable reflector systemd-{networkd-wait-online,timesyncd}
@@ -262,7 +262,7 @@ Click on Apple logo > Spegni
 Unplug macOS USB installer.
 Boot the PC, "Boot Device Not Found", insert Arch installer one more time.
 
-Ctrl-Alt-Del, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb pcie_port_pm=off psmouse.synaptics_intertouch=1 quiet loglevel=0"
+Ctrl-Alt-Del, F9, USB, UEFI Shell, Arch systemd-boot, "e", "module_blacklist=b43,b43legacy,bcm43xx,bcma,brcm80211,brcmfmac,brcmsmac,ssb psmouse.synaptics_intertouch=1 quiet loglevel=0"
 
 # lsblk -po +FSTYPE,LABEL,PARTLABEL,PARTTYPENAME
 # gdisk /dev/nvme0n1
