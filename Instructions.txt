@@ -128,17 +128,18 @@ v
 w
 y
 
-% dd if=archlinux-x86_64.iso bs=1 skip=$(( 0x8028 )) count=32 status=none | perl -pe 's/[ ]+$/\n/'
-% sudo newfs_msdos -v ARCH_202603 /dev/rdiskXs1
+% export ARCHFSLABEL="$(dd if=archlinux-x86_64.iso bs=1 skip=$(( 0x8028 )) count=32 status=none | perl -pe 's/[ ]+$//')"
+% sudo newfs_msdos -v $ARCHFSLABEL /dev/rdiskXs1
 % sudo diskutil mount nobrowse /dev/diskXs1
-% bsdtar -x -v --exclude EFI/BOOT/BOOTIA32.EFI --exclude boot/syslinux/ --exclude shellia32.efi -f archlinux-x86_64.iso -C /Volumes/ARCH_202603
-% perl -i -pe 's/(timeout).*/$1 5/;s/(beep).*/$1 off/' /Volumes/ARCH_202603/loader/loader.conf
-% mv /Volumes/ARCH_202603/EFI/BOOT/{,ARCH-}BOOTx64.EFI
-% cp /Volumes/ARCH_202603/{shellx64.efi,EFI/BOOT/BOOTx64.EFI}
-% cp HP_15-da1000nl_Ventura-master/BIOS/BIOS_settings.nsh /Volumes/ARCH_202603/EFI/BOOT/
-% mkdir /Volumes/ARCH_202603/EFI/TOOLS/
-% cp HP_15-da1000nl_Ventura-master/EFI/TOOLS/uvt.efi /Volumes/ARCH_202603/EFI/TOOLS/
-% printf '@echo -off\r\nARCH-BOOTx64.EFI\r\n' | perl -0777pe 's/(.)/$1\x00/gs;s/^/\xFF\xFE/' > /Volumes/ARCH_202603/EFI/BOOT/startup.nsh
+% bsdtar -x -v --exclude EFI/BOOT/BOOTIA32.EFI --exclude boot/syslinux/ --exclude shellia32.efi -f archlinux-x86_64.iso -C /Volumes/$ARCHFSLABEL
+% perl -i -pe 's/(timeout).*/$1 5/;s/(beep).*/$1 off/' /Volumes/$ARCHFSLABEL/loader/loader.conf
+% mv /Volumes/$ARCHFSLABEL/EFI/BOOT/{,ARCH-}BOOTx64.EFI
+% cp /Volumes/$ARCHFSLABEL/{shellx64.efi,EFI/BOOT/BOOTx64.EFI}
+% cp HP_15-da1000nl_Ventura-master/BIOS/BIOS_settings.nsh /Volumes/$ARCHFSLABEL/EFI/BOOT/
+% mkdir /Volumes/$ARCHFSLABEL/EFI/TOOLS/
+% cp HP_15-da1000nl_Ventura-master/EFI/TOOLS/uvt.efi /Volumes/$ARCHFSLABEL/EFI/TOOLS/
+% printf '@echo -off\r\nARCH-BOOTx64.EFI\r\n' | perl -0777pe 's/(.)/$1\x00/gs;s/^/\xFF\xFE/' > /Volumes/$ARCHFSLABEL/EFI/BOOT/startup.nsh
+% unset ARCHFSLABEL
 % sudo sync
 % diskutil umount /dev/diskXs1
 % diskutil eject /dev/diskX
