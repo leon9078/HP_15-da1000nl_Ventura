@@ -1,0 +1,45 @@
+Trying to explain the issues I found with this laptop with ACPI ECDT (Embedded Controller Boot Resources Table) on Windows, Linux and macOS.
+
+What I tried inside ECDT:
+
+1) "GPE_BIT" replace 0x17 value with 0x50 in order to match the _GPE of DSDT. Needed on Linux to fix:
+    - brightness up and down keys not working
+    - entering S3 by closing LID (and subsequent wake from S3 by opening the LID [LID wake])
+    - before the fix, entering S3 would have enabled airplane mode (?!)
+    - probably other issues...
+2) For "EC_ID" with the (fake) H_EC device I MUST LEAVE IT AS IS. If I change this value to any other value (EC, EC0, etc), then brightness keys will work no more in Windows...
+
+
+What I discovered inside DSDT:
+
+1) Windows is VERY VERY sensible at modify things inside the (real) Embedded Controller scope:
+    - edits to methods
+    - trying to enable brightness keys (for macOS) through _Q11, _Q12 methods inside DSDT
+
+... So, don't modify anything!!!
+
+2) Always in Windows, renaming original (real) "EC0" device to (e.g.) "EC" in DSDT/every SSDT will work EXCEPT when the device is exactly "H_EC" (it matches the ECDT one...)
+
+
+
+In macOS if both DSDT EC path and ECDT EC path are the same, a new device named "boot-ec" in IOReg will popup and AppleACPIEC will attach to it. But this is NOT possible for us because of Windows complaints...
+
+If the above condition is NOT met, then AppleACPIEC will attach to the corrisponding EC having _HID "PNP0C09", but then these new errors will appear in the kernel log:
+
+"ACPI: No device handle for EC_ID \134SB.PCI0.LPCB.H_EC" ---> generated from "com.apple.driver.AppleACPIPlatform"
+"ACPI: no ECDT" --------------------------------------------> generated from "com.apple.driver.AppleACPIEC"
+
+
+
+
+
+Furthermore, I discovered that a newer HP laptop with Intel Core 11th gen (HP Laptop 15-fa-1xxxnl) does NOT have an ECDT ACPI table!!!
+
+
+
+
+
+Solutions:
+1) Do NOT add any SSDT-EC
+2) Drop OEM ECDT ACPI table
+3) Rename "EC0" to "EC" in DSDT/every SSDT
