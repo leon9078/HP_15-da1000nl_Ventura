@@ -193,7 +193,7 @@ n
 [Enter, accept default Partition number]
 [Enter, accept default First sector]
 [Enter, accept default Last sector]
-af00
+af0a
 c
 2
 [empty name (PARTLABEL)]
@@ -229,8 +229,8 @@ Ctrl-Alt-Del, ESC, F9, macOS USB, "Install macOS Ventura (external)" will be aut
 Type Cmd+Shift+T to quickly enter Terminal
 
 # diskutil list
-# newfs_hfs -J -v 'Macintosh HD' /dev/rdiskXs2
-# diskutil mount nobrowse /dev/diskXs2
+# newfs_apfs -v 'Macintosh HD' /dev/rdiskXs2
+# diskutil mount nobrowse /dev/diskYs1 # where Y is X+1
 
 Cmd+Q to quit Terminal
 
