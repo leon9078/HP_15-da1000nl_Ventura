@@ -230,7 +230,7 @@ Type Cmd+Shift+T to quickly enter Terminal
 
 # diskutil list
 # newfs_apfs -v 'Macintosh HD' /dev/rdiskXs2
-# diskutil mount nobrowse /dev/diskYs1 # where Y is X+1
+# diskutil mount nobrowse /dev/$(diskutil list | grep 'Macintosh HD' | awk '{printf $NF}')
 
 Cmd+Q to quit Terminal
 
